@@ -1,0 +1,56 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+  
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.hidden {
+    display: none;
+}
+
+/* Animación de girar */
+@keyframes jump {
+    0%, 100% {
+      transform: translateY(0); /* Posición inicial y final: no se mueve verticalmente. */
+    }
+    50% {
+      transform: translateY(-20px); /* Posición máxima de salto hacia arriba. */
+    }
+  }
+
+
+/* Estilos para la imagen del Pokémon */
+#pokemonImage {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    animation: jump 0.5s ease-in-out infinite alternate; /* Aplica la animación 'jump'. */
+}
+
+.pokemon-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .pokemon-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+  }
+  
