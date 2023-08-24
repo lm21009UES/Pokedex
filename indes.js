@@ -31,6 +31,7 @@ function showPokemonListWithCards() {
 
             const card = document.createElement('div');
             card.classList.add('pokemon-card');
+            card.id = pokemonData.name.toLowerCase(); // Establece el ID igual al nombre del Pokémon en minúsculas
 
             // Crear la imagen del Pokémon
             const pokemonImage = document.createElement('img');
@@ -85,3 +86,31 @@ function showPokemonListWithCards() {
 
 // Llama a la función para mostrar la lista de Pokémon con tarjetas individuales cuando la página se carga
 document.addEventListener('DOMContentLoaded', showPokemonListWithCards);
+
+// Obtén el formulario de búsqueda y el campo de entrada
+const searchForm = document.querySelector('.Buscador');
+const searchInput = searchForm.querySelector('input[type="search"]');
+
+// Agrega un evento de escucha para el envío del formulario
+searchForm.addEventListener('submit', function (e) {
+  e.preventDefault(); // Evita que se envíe el formulario
+
+  const searchTerm = searchInput.value.trim().toLowerCase(); // Obtén el término de búsqueda en minúsculas
+
+  // Busca la tarjeta del Pokémon con el ID correspondiente al término de búsqueda
+  const pokemonCard = document.getElementById(searchTerm);
+
+  if (pokemonCard) {
+    // Si se encuentra la tarjeta, desplázate a ella
+    pokemonCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Esto hará un desplazamiento suave
+    pokemonCard.classList.add("resaltante");
+    searchInput.value = "";
+    setTimeout(() =>{
+      pokemonCard.classList.remove('resaltante');
+    }, 5000);
+
+  } else {
+    // Si no se encuentra la tarjeta, muestra un mensaje de error o realiza alguna otra acción
+    window.alert("No se encuentra el Pokemon");
+  }
+});
