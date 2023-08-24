@@ -231,7 +231,7 @@ ul .fighting:hover{
     padding: 20px;
     text-align: center;
     background-color: rgba(251, 245, 245, 0.445);
-    background-image: url("./IMG/blob.svg");
+    background-image: url("https://raw.githubusercontent.com/lm21009UES/Pokedex/3dead1cf14e5547f6a3693f671abbd5c0d5da14f/IMG/blob.svg");
     background-repeat: no-repeat;
     background-position: center;
     backface-visibility: hidden;
