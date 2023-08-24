@@ -1,0 +1,230 @@
+
+/*-------------------------------------------------------------------------------*/
+/*Dandole estilo al diseño de la navbarv de la pokedex*/
+.nav{
+  display: flex;
+  padding: 0;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+ul li{
+  padding:2px 20px;
+  list-style-type: none;
+  /*Definiendo una pequeña transición*/
+  transition: 0.4s;
+}
+
+ul button{
+  width: 10rem;
+  cursor: pointer;
+}
+
+/*Estilo de los buttons segun la clase de pokemon*/
+ul .todos{
+  background-color:#DC5F00;
+  color: white;
+}
+ul .todos:hover{
+  background-color:#eb7c28;
+  color: white;
+}
+/*-----------------------------*/
+ul .normal{
+  background-color: #e4d45c;
+  color: white;
+}
+ul .normal:hover{
+  background-color: #e0b423;
+  color: white;
+}
+/*-----------------------------*/
+ul .fire{
+  background-color: #F94C10;
+  color: white;
+}
+ul .fire:hover{
+  background-color: tomato;
+  color: white;
+}
+/*-----------------------------*/
+ul .water{
+  background-color: #75C2F6;
+  color: white;
+}
+ul .water:hover{
+  background-color: #3a93cf;
+  color: white;
+}
+/*-----------------------------*/
+ul .bug{
+  background: #609966;
+  color: white;
+}
+ul .bug:hover{
+  background: #32a73e;
+  color: white;
+}
+/*-----------------------------*/
+ul .rock{
+  background-color: gray;
+  color: white;
+}
+ul .rock:hover{
+  background-color: rgb(87, 83, 83);
+  color: white;
+}
+/*-----------------------------*/
+ul .ghost{
+  background-color:#58287F ;
+  color: white;
+}
+ul .ghost:hover{
+  background-color:#8241b8 ;
+  color: white;
+}
+/*-----------------------------*/
+ul .electric{
+  background-color: #FFB100;
+  color: white;
+}
+ul .electric:hover{
+  background-color: #f0b733;
+  color: white;
+}
+/*-----------------------------*/
+ul .poison{
+  background-color: #7B2869;
+  color: white;
+}
+ul .poison:hover{
+  background-color: #9b2b83;
+  color: white;
+}
+/*-----------------------------*/
+ul .psychic{
+  background-color: #FED049;
+  color: white;
+}
+ul .psychic:hover{
+  background-color: #d3a312;
+  color: white;
+}
+/*-----------------------------*/
+ul .dragon{
+  background-color: #4a48c4;
+  color:white
+}
+ul .dragon:hover{
+  background-color: #3c3b74;
+  color:white
+}
+/*-----------------------------*/
+ul .grass{
+  background-color: #68B984;
+  color: white;
+}
+ul .grass:hover{
+  background-color: #0e6e2e;
+  color: white;
+}
+/*-----------------------------*/
+ul .ground{
+  background-color: #eba64c;
+  color: white;
+}
+ul .ground:hover{
+  background-color: #c07d26;
+  color: white;
+}
+/*-----------------------------*/
+ul .fighting{
+  background-color: #7D9D9C;
+  color: white;
+}
+ul .fighting:hover{
+  background-color: #4f6968;
+  color: white;
+}
+
+.IMGL {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px; 
+        width: 100%;
+       }
+
+.Logo1{
+   width: 25rem;
+   height: 11rem;
+   
+}
+
+.Poke{
+  float: right;
+  width: 2rem;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*Buscador de pokemons*/
+.busqueda{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Buscador{
+  width: 50rem;
+}
+  
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+.hidden {
+    display: none;
+}
+
+/* Animación de girar */
+@keyframes jump {
+    0%, 100% {
+      transform: translateY(0); /* Posición inicial y final: no se mueve verticalmente. */
+    }
+    50% {
+      transform: translateY(-20px); /* Posición máxima de salto hacia arriba. */
+    }
+  }
+
+
+/* Estilos para la imagen del Pokémon */
+#pokemonImage {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    animation: jump 0.5s ease-in-out infinite alternate; /* Aplica la animación 'jump'. */
+}
+
+.pokemon-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .pokemon-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+  }
+  
