@@ -1,0 +1,45 @@
+@media(max-width:768px){
+    .nav {
+        flex-direction: column; 
+      }
+
+      .Contenido {
+        /* Reducimos el grosor del borde */
+        border: solid 0.3rem rgb(49, 49, 49); 
+        border-radius: 10px; 
+         /* Agregando espacio superior para separación */
+        margin-top: 1rem;
+      }    
+
+    ul{
+        display: grid;
+        /*Establecemos que sean dos columnas*/
+        grid-template-columns: repeat(3, 1fr);
+        /*Espacio que habra entre las opciones*/
+        gap: 6px;
+      }
+
+      ul button{
+        width: 7.4rem;
+        height: 3rem;
+        cursor: pointer;
+      }
+      .Poke{
+        float: right;
+        width: 1.5rem;
+      }
+
+    .busqueda{
+        height: auto; /* Ajusta la altura automáticamente */
+        padding: 1rem; /* Aumenta el espacio interno */
+    }
+
+    .Buscador {
+    width: 100%; /* Ancho completo para el buscador */
+  }
+
+   .container {
+    max-width: 100%;
+    background-color:  rgb(49, 49, 49);
+   }
+}
