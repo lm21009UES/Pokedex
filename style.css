@@ -6,6 +6,13 @@
   padding: 0;
 }
 
+.Contenido{
+  background-color: rgb(75, 74, 74);
+  border: solid 0.5rem rgb(49, 49, 49);
+  border-radius: 20px;
+}
+
+/*Opciones*/
 ul{
   display: flex;
   flex-direction: row;
@@ -164,6 +171,7 @@ ul .fighting:hover{
    
 }
 
+/*Iconos de las pokebolas*/
 .Poke{
   float: right;
   width: 2rem;
@@ -172,9 +180,11 @@ ul .fighting:hover{
 /*-------------------------------------------------------------------------------*/
 /*Buscador de pokemons*/
 .busqueda{
+  background-color: rgb(49, 49, 49);
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 6rem;
 }
 
 .Buscador{
@@ -185,8 +195,9 @@ ul .fighting:hover{
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color:  rgb(49, 49, 49);
+    box-shadow: 0 0 10px rgba(223, 219, 219, 0.212);
+    border-radius: 6px;
 }
   
 .hidden {
@@ -228,3 +239,7 @@ ul .fighting:hover{
     margin: 0 auto 10px;
   }
   
+.pokemon-card:hover{
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3%);
+}

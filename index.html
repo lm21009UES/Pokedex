@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css">
+    <!--Llamando al responsive para celular de la pokedex-->
+    <link rel="stylesheet" href="Responsive.css">
     <script src="indes.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,7 +15,7 @@
 <style>
     body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgb(226, 231, 241);
+    background-color: rgb(49, 49, 49);
     margin: 0;
     padding: 0;
     text-align: center;
@@ -24,51 +26,53 @@
 
      <!--Navbar de la pokedex-->
     <nav class="nav">
+      <div class="Contenido">
         <div class="IMGL mb-2">
-            <img class="Logo1" src="/IMG/Logo2.png" alt="Logo">
+            <img class="Logo1" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/Logo2.png" alt="Logo">
         </div>
         <ul>
-            <li class="nav-item"><button class="btn btn-header todos" id="Todos">Ver todos <img class="Poke" src="/IMG/juegos.png" alt="Pokebola"></button></li>
+            <li class="nav-item"><button class="btn btn-header todos" id="Todos">Ver todos <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola"></button></li>
             <li class="nav-item"><button class="btn btn-header bug" id="bug">Bug
-                <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header dragon" id="dragon">
-                Dragon <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Dragon <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header electric" id="electric">
-                Electric <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Electric <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header fire" id="fire">
-                Fire <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Fire <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header fighting" id="fighting">
-                Fighting <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Fighting <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header grass" id="grass">
-                Grass <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Grass <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header ground" id="ground">
-                Ground <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Ground <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header ghost" id="ghost">
-                Ghost <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Ghost <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header normal" id="normal">
-                Normal <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Normal <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header poison"id="poison">
-                Poison <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Poison <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header psychic" id="psychic">
-                Psychic <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Psychic <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header rock" id="rock">
-                Rock <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Rock <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
             <li class="nav-item"><button class="btn btn-header water" id="water">
-                Water <img class="Poke" src="/IMG/juegos.png" alt="Pokebola">
+                Water <img class="Poke" src="https://raw.githubusercontent.com/lm21009UES/Pokedex/main/IMG/juegos.png" alt="Pokebola">
             </button></li>
         </ul>
+      </div>
     </nav>
     <div class="busqueda">
         <form class="d-flex Buscador mb-2" role="search">
@@ -76,8 +80,6 @@
             <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>
-
-
 
       <div class="container">
         <div id="pokemonCards" class="pokemon-card-container"></div>
