@@ -232,3 +232,8 @@ ul .fighting:hover{
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-3%);
 }
+
+.resaltante{
+  box-shadow: 5px 5px 25px red;
+  transform: translateY(4%);
+}
