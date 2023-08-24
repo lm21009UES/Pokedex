@@ -156,6 +156,20 @@ ul .fighting:hover{
   background-color: #4f6968;
   color: white;
 }
+/*-----------------------------*/
+ul .Informacion{
+  background-color:#1D5B79 ;
+  color: white;
+}
+ul .Informacion:hover{
+  background-color:#1781b6 ;
+  color: white;
+}
+
+.Info{
+  text-decoration: none;
+  color: white;
+}
 
 .IMGL {
         display: flex;
@@ -224,13 +238,17 @@ ul .fighting:hover{
 }
 
 .pokemon-card {
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(243, 240, 240, 0.959);
+    background-image: url("https://raw.githubusercontent.com/lm21009UES/Pokedex/3dead1cf14e5547f6a3693f671abbd5c0d5da14f/IMG/blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    backface-visibility: hidden;
   }
   
   .pokemon-image {
@@ -245,6 +263,6 @@ ul .fighting:hover{
 }
 
 .resaltante{
-  box-shadow: 5px 5px 25px red;
+  box-shadow: 5px 5px 25px #e29219;
   transform: translateY(4%);
 }

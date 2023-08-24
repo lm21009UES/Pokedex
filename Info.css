@@ -1,0 +1,108 @@
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(49, 49, 49);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+    }
+
+    /*Estilo del navbar de la pagina*/
+    .navbar{
+        background-color: rgb(104, 102, 102);
+        border: solid 0.4rem rgb(49, 49, 49);
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav{
+        margin-left: 40px;
+        gap: 50px;
+    }
+    /*Logo del navbar*/
+    .Logo2Pokedex{
+        width: 10rem;
+    }
+    
+
+    /*Contiene la imagen de la pokedex empleada*/
+    .card{
+        width: 48rem;
+        height: 33rem;
+        background-image: url(./IMG/Pokedex_Info1.png);
+        background-size: 50rem;
+        background-position: center;
+    }
+    
+/*Elementos del diseño de la pokedex*/
+.Teclado{
+    position: absolute;
+    background-color: rgb(204, 29, 92);
+    width: 17rem;
+    height: 6.4rem;
+    top: 68%;
+    left: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control{
+    width: 15.5rem;
+    border: solid 2px rgb(49, 49, 49);
+    border-radius: 6px;  
+}
+
+.Buscar{
+    width:15.5rem ;
+    background-color: rgb(31, 25, 88);
+    color: white;
+    cursor: pointer;
+}
+.Buscar:hover{
+    background-color: rgb(31, 22, 112);
+    color: white;
+}
+
+.InfoE{
+    position: absolute;
+    background-color: rgb(253, 34, 84);
+    width: 17.3rem;
+    height: 18rem;
+    top: 35%;
+    left: 54%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Fondo de donde se mostrara el sprite del pokemon*/
+.Pokemon{
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./IMG/FondoGif.gif);
+    width: 14rem;
+    height: 7.5rem;
+    top: 36.2%;
+    left: 13.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Para mostrar la card con la info del pokemon*/
+.Vista{
+    width: 18rem;
+    height: 17.8rem;
+    background-color: white;
+    border-radius: 2px;
+    border:solid 2px  rgb(31, 25, 88);
+}
+
+i{
+    color: #f3ac07;
+}
+
+
+

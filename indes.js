@@ -5,7 +5,7 @@ const apiURL = 'https://pokeapi.co/api/v2/pokemon?limit=150';
 // ... otros códigos ...
 
 // Función para mostrar la lista de Pokémon con tarjetas individuales
-function showPokemonListWithCards() {
+function showPokemonListWithCards(nombre) {
   fetch(apiURL)
     .then(response => response.json())
     .then(data => {
@@ -24,43 +24,43 @@ function showPokemonListWithCards() {
         fetch(pokemon.url)
           .then(response => response.json())
           .then(pokemonData => {
-            console.log(pokemonData);
-            // Crear una columna para la tarjeta usando Bootstrap
-            const col = document.createElement('div');
-            col.classList.add('col-md-4'); // Divide en 3 columnas en pantallas medianas (Bootstrap)
+            if(nombre === "Ver todos" || nombre ===pokemonData.types[0].type.name){
+              // Crear una columna para la tarjeta usando Bootstrap
+              const col = document.createElement('div');
+              col.classList.add('col-md-4'); // Divide en 3 columnas en pantallas medianas (Bootstrap)
 
-            const card = document.createElement('div');
-            card.classList.add('pokemon-card');
-            card.id = pokemonData.name.toLowerCase(); // Establece el ID igual al nombre del Pokémon en minúsculas
+              const card = document.createElement('div');
+              card.classList.add('pokemon-card');
+              card.id = pokemonData.name.toLowerCase(); // Establece el ID igual al nombre del Pokémon en minúsculas
 
-            // Crear la imagen del Pokémon
-            const pokemonImage = document.createElement('img');
-            pokemonImage.src = pokemonData.sprites.front_default;
-            pokemonImage.alt = pokemonData.name;
-            pokemonImage.classList.add('pokemon-image');
+              // Crear la imagen del Pokémon
+              const pokemonImage = document.createElement('img');
+              pokemonImage.src = pokemonData.sprites.front_default;
+              pokemonImage.alt = pokemonData.name;
+              pokemonImage.classList.add('pokemon-image');
 
-            // Crear el nombre del Pokémon
-            const pokemonName = document.createElement('h2');
-            pokemonName.textContent = pokemonData.name.toUpperCase();
+              // Crear el nombre del Pokémon
+              const pokemonName = document.createElement('h2');
+              pokemonName.textContent = pokemonData.name.toUpperCase();
 
-            // Crear el tipo del Pokémon
-            const pokemonType = document.createElement('p');
-            pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
+              // Crear el tipo del Pokémon
+              const pokemonType = document.createElement('p');
+              pokemonType.textContent = `${pokemonData.types[0].type.name}`;
 
-            // Agregar la imagen, el nombre y el tipo a la tarjeta
-            card.appendChild(pokemonImage);
-            card.appendChild(pokemonName);
-            card.appendChild(pokemonType);
+              // Agregar la imagen, el nombre y el tipo a la tarjeta
+              card.appendChild(pokemonImage);
+              card.appendChild(pokemonName);
+              card.appendChild(pokemonType);
 
-            // Agregar la tarjeta a la columna
-            col.appendChild(card);
+              // Agregar la tarjeta a la columna
+              col.appendChild(card);
 
-            // Agregar la columna a la fila actual
-            row.appendChild(col);
+              // Agregar la columna a la fila actual
+              row.appendChild(col);
 
-            // Incrementa el contador de tarjetas en la fila
-            cardCount++;
-
+              // Incrementa el contador de tarjetas en la fila
+              cardCount++;
+            }
             // Si hemos agregado 3 tarjetas a la fila actual, crea una nueva fila
             if (cardCount === 3) {
               cardContainer.appendChild(row);
@@ -85,8 +85,7 @@ function showPokemonListWithCards() {
 }
 
 // Llama a la función para mostrar la lista de Pokémon con tarjetas individuales cuando la página se carga
-document.addEventListener('DOMContentLoaded', showPokemonListWithCards);
-
+document.addEventListener("DOMContentLoaded", showPokemonListWithCards("Ver todos"))
 // Obtén el formulario de búsqueda y el campo de entrada
 const searchForm = document.querySelector('.Buscador');
 const searchInput = searchForm.querySelector('input[type="search"]');
@@ -113,4 +112,19 @@ searchForm.addEventListener('submit', function (e) {
     // Si no se encuentra la tarjeta, muestra un mensaje de error o realiza alguna otra acción
     window.alert("No se encuentra el Pokemon");
   }
+});
+
+const remover = () =>{
+  const cards = document.querySelector("#pokemonCards");
+  cards.innerHTML = "";
+}
+
+const list = document.querySelectorAll(".btn-header");//capturamos toda la lista de categorias de pokemones
+list.forEach(element => {//con un foreach recorremos toda la lista
+  element.addEventListener("click", ()=>{//agregamos evento a cada uno de los botones
+    const category = element.getAttribute("id");
+    // Recarga la página con el nuevo parámetro en la URL
+    remover();
+    showPokemonListWithCards(category);
+  })
 });
