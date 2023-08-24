@@ -224,13 +224,17 @@ ul .fighting:hover{
 }
 
 .pokemon-card {
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(251, 245, 245, 0.445);
+    background-image: url("./IMG/blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    backface-visibility: hidden;
   }
   
   .pokemon-image {

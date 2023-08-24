@@ -45,7 +45,7 @@ function showPokemonListWithCards(nombre) {
 
               // Crear el tipo del Pokémon
               const pokemonType = document.createElement('p');
-              pokemonType.textContent = `Type: ${pokemonData.types[0].type.name}`;
+              pokemonType.textContent = `${pokemonData.types[0].type.name}`;
 
               // Agregar la imagen, el nombre y el tipo a la tarjeta
               card.appendChild(pokemonImage);
