@@ -95,14 +95,30 @@ body{
 .Vista{
     width: 18rem;
     height: 17.8rem;
-    background-color: white;
+    background-color: rgb(31, 25, 88);
     border-radius: 2px;
-    border:solid 2px  rgb(31, 25, 88);
+    border:solid 2px  rgb(139, 133, 192);
 }
 
 i{
     color: #f3ac07;
 }
+
+/*Colores para donde se muestra la info*/
+.normal { background-color: #e4d45c; }
+.fire { background-color: #F94C10; }
+.water { background-color: #75C2F6; }<h6>Tipo: <h6>Tipo: electric steel </h6> </h6>
+.bug{ background: #609966;}
+.gock{ background-color: gray; }
+.ghost{ background-color:#58287F ;}
+.electric{ background-color: #FFB100; color: black;}
+.poison{ background-color: #7B2869; }
+.psychic{ background-color: #FED049; }
+.dragon{ background-color: #4a48c4; }
+.grass{ background-color: #68B984; }
+.ground{  background-color: #eba64c; }
+.fighting{ background-color: #7D9D9C; }
+
 
 
 
