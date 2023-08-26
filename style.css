@@ -156,7 +156,6 @@ ul .fighting:hover{
   background-color: #4f6968;
   color: white;
 }
-/*-----------------------------*/
 ul .Informacion{
   background-color:#1D5B79 ;
   color: white;
@@ -238,24 +237,30 @@ ul .Informacion:hover{
 }
 
 .pokemon-card {
-    border: 3px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(243, 240, 240, 0.959);
-    background-image: url("https://raw.githubusercontent.com/lm21009UES/Pokedex/3dead1cf14e5547f6a3693f671abbd5c0d5da14f/IMG/blob.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    backface-visibility: hidden;
-  }
+  width: 90%;
+  grid-column: span 1;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(251, 245, 245, 0.445);
+  background-image: url("https://raw.githubusercontent.com/lm21009UES/Pokedex/3dead1cf14e5547f6a3693f671abbd5c0d5da14f/IMG/blob.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  backface-visibility: hidden;
+  font-size: 15px;
+}
+.pokemon-card h2{
+  font-size: 20px;
+}
   
-  .pokemon-image {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 10px;
-  }
+.pokemon-image {
+  width: 50%;
+  height: auto;
+  margin: 0 auto 10px;
+}
   
 .pokemon-card:hover{
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
@@ -266,3 +271,45 @@ ul .Informacion:hover{
   box-shadow: 5px 5px 25px #e29219;
   transform: translateY(4%);
 }
+
+.pokemon-card-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  place-items: center;
+}
+
+@media (max-width: 400px){
+  .pokemon-card-container{
+    width: 100%;
+    grid-template-columns: 50% 50%;
+  }
+
+  .pokemon-card{
+    font-size: 12px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  .pokemon-card h2 {
+    font-size: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .pokemon-image{
+    width: 90%;
+    height: auto;
+  }
+}
+
+/*Colores para caundo se busca el pokemon*/
+.normal { background:linear-gradient(#d8c956,#867c31);color:white; }
+.fire { background:linear-gradient(#e67205,#ac360e); color:white;}
+.water { background:linear-gradient(#75C2F6,#3f5f8a); color:white;}
+.bug{ background:linear-gradient(#609966,#20501b);color: white;}
+.rock{ background:linear-gradient(rgb(110, 109, 109),#1b2022); color:white;}
+.ghost{ background:linear-gradient(#752fbb,#361353); color:white;}
+.electric{ background:linear-gradient(#f3cb17,#e98c21); color:white;}
+.poison{ background:linear-gradient(#9b3284,#510b5f); color:white;}
+.psychic{ background:linear-gradient(rgb(222, 189, 65),rgb(123, 82, 8)); color:white;}
+.dragon{ background:linear-gradient(#157aa8,#4240af); color:white;}
+.grass{background:linear-gradient(#449761,#52911e); color:white;}
+.ground{background:linear-gradient(#db9942,#5e5447); color:white;}
+.fighting{ background:linear-gradient(#7D9D9C,#4c5555); color:white;}
