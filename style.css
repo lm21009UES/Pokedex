@@ -212,7 +212,7 @@ ul .Informacion:hover{
   box-shadow: 0 0 10px rgba(223, 219, 219, 0.212);
   border-radius: 6px;
 }
-  
+
 .hidden {
   display: none;
 }
@@ -433,4 +433,3 @@ list-style: none;
 .dragon{ background:linear-gradient(#157aa8,#4240af); color:white;}
 .grass{background:linear-gradient(#449761,#52911e); color:white;}
 .ground{background:linear-gradient(#db9942,#5e5447); color:white;}
-.fighting{ background:linear-gradient(#7D9D9C,#4c5555); color:white;}
