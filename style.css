@@ -298,3 +298,124 @@ ul .Informacion:hover{
     height: auto;
   }
 }
+
+/*para la tarjeta donde se mostrara la informacion*/
+
+.cardT{
+  display: none;
+    position: fixed;
+    width: 40%;
+    height: auto;
+    font-size: 12px;
+    border-radius: 25px 25px 5px 5px;
+    box-shadow: 15px 15px 20px;
+    background: linear-gradient(to right top, #c6e6df, #6dd2aa, #75d38f, #88d26f, #a3cf4a);
+    top: 50%; /* Centra verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
+  transition: opacity 0.5s ease-in-out; /* Aplica una transición de opacidad suave */
+  opacity: 0; /* Inicialmente, la tarjeta estará invisible */
+  z-index: 999; /* Asegura que la tarjeta esté por encima del contenido */
+}
+
+.cardTHeader i{
+  padding-left: 4%;
+  width: 100%;
+  height: 20px;
+}
+
+.cardTHeader i:hover{
+  cursor: pointer;
+}
+
+.cardTImg{
+  display: flex;
+  width: 100%;
+  height: 200px;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  background-image: url("./IMG/blob2.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cardTImg img{
+  padding-top: 10px;
+  width: 70%;
+  height: auto;
+}
+
+.cardTBody{
+  padding: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: white;
+}
+.cardTNav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 25px 25px 0 0;
+}
+
+.cardTNav ul{
+  box-sizing: border-box;
+  margin: 10px 2px 2px 0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav-item .active{
+  border-radius: 15px 15px 0 0;
+  background-image: linear-gradient(to right top, #c2f1e6, #c3d6cd, #739c7b, #819b76, #8e9973);
+}
+
+/* Definir la animación */
+@keyframes moverBorde {
+  0% {
+    border-color: rgb(185, 100, 100); /* Color del borde en el inicio */
+    transform: translate(0, 0); /* Posición inicial */
+  }
+  25% {
+    border-color: rgb(135, 135, 174); /* Color del borde a 25% de la animación */
+    transform: translate(100%, 0); /* Mover el borde hacia la derecha */
+  }
+  50% {
+    border-color: rgb(139, 189, 139); /* Color del borde a 50% de la animación */
+    transform: translate(100%, 100%); /* Mover el borde hacia abajo */
+  }
+  75% {
+    border-color: rgb(135, 135, 96); /* Color del borde a 75% de la animación */
+    transform: translate(0, 100%); /* Mover el borde hacia la izquierda */
+  }
+  100% {
+    border-color: rgb(200, 128, 128); /* Color del borde al final de la animación (vuelve al inicio) */
+    transform: translate(0, 0); /* Posición final (vuelve al inicio) */
+  }
+}
+
+ul{
+  list-style: none;
+}
+
+@media (max-width: 400px){
+  .cardT{
+      width: 60%;
+      height: auto;
+      font-size: 12px;
+      border-radius: 25px 25px 5px 5px;
+      box-shadow: 15px 15px 20px;
+      background: linear-gradient(to right top, #c6e6df, #6dd2aa, #75d38f, #88d26f, #a3cf4a);
+      top: 50%; /* Centra verticalmente */
+    left: 35%;
+    transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
+    transition: opacity 0.5s ease-in-out; /* Aplica una transición de opacidad suave */
+    opacity: 0; /* Inicialmente, la tarjeta estará invisible */
+    z-index: 999; /* Asegura que la tarjeta esté por encima del contenido */
+  }
+  .cardTNav li{
+    font-size: 9px;
+    box-sizing: border-box;
+    margin: 10px 2px 2px 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+}
