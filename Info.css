@@ -39,8 +39,20 @@ body{
     position: absolute;
     background-color: rgb(204, 29, 92);
     width: 17rem;
-    height: 6.4rem;
-    top: 68%;
+    height: 4rem;
+    top: 69%;
+    left: 11%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Boton{
+    width: 17rem;
+    background-color: rgb(204, 29, 92);
+    height: 3rem;
+    position: absolute;
+    top: 79.4%;
     left: 11%;
     display: flex;
     justify-content: center;
@@ -100,24 +112,102 @@ body{
     border:solid 2px  rgb(139, 133, 192);
 }
 
-i{
-    color: #f3ac07;
-}
+i{ color: #f3ac07; }
 
 /*Colores para donde se muestra la info*/
-.normal { background-color: #e4d45c; }
-.fire { background-color: #F94C10; }
-.water { background-color: #75C2F6; }<h6>Tipo: <h6>Tipo: electric steel </h6> </h6>
-.bug{ background: #609966;}
-.gock{ background-color: gray; }
-.ghost{ background-color:#58287F ;}
-.electric{ background-color: #FFB100; color: black;}
-.poison{ background-color: #7B2869; }
-.psychic{ background-color: #FED049; }
-.dragon{ background-color: #4a48c4; }
-.grass{ background-color: #68B984; }
-.ground{  background-color: #eba64c; }
-.fighting{ background-color: #7D9D9C; }
+.normal { background:linear-gradient(#d8c956,#867c31); border: solid 2px #4C3D3D; border-radius: 10px; }
+.fire { background:linear-gradient(#e67205,#ac360e); border: solid 2px #23292c; border-radius: 10px;}
+.water { background:linear-gradient(#75C2F6,#3f5f8a); border: solid 2px #072853;border-radius: 10px;}
+.bug{ background:linear-gradient(#609966,#20501b); border: solid 2px #062921; border-radius: 10px;}
+.rock{ background:linear-gradient(rgb(110, 109, 109),#1b2022) gray; border: solid 2px #0b191f; border-radius: 10px;}
+.ghost{ background:linear-gradient(#752fbb,#361353); border:solid 2px #1f234d; border-radius: 10px;}
+.electric{ background:linear-gradient(#f3cb17,#e98c21);;border:solid 2px #23292c;border-radius: 10px;}
+.poison{ background:linear-gradient(#9b3284,#510b5f); border: solid 2px #1f234d; border-radius: 10px; }
+.psychic{ background:linear-gradient(rgb(222, 189, 65),rgb(123, 82, 8));border: solid 2px #23292c; border-radius: 10px;}
+.dragon{ background:linear-gradient(#157aa8,#4240af);border: solid 2px #072853;border-radius: 10px; }
+.grass{background:linear-gradient(#449761,#52911e); border: solid 2px #23292c; border-radius: 10px;}
+.ground{background:linear-gradient(#db9942,#5e5447); border: solid 2px #1c1f24;border-radius:10px;}
+.fighting{ background:linear-gradient(#7D9D9C,#4c5555);border: solid 2px #1c1f24;border-radius:10px;}
+/*----------------------------------------------------------------------------*/
+/*Responsive para celulares*/
+@media(max-width:768px){
+    /*Nuevo estilo en la forma de la pokedex para el responsive*/
+    .card{
+        width: 23rem;
+        height: 36rem;
+        background-image: url(./IMG/PokedexREsponsive.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /*gif de fonndo de la pantalla donde se muestra el sprite del pokemon*/
+    .Pokemon{
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-image: url(./IMG/FondoGif.gif);
+        width: 11.6rem;
+        height: 6.4rem;
+        top: 10%;
+        left: 35.8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+/*----------------------------------------------------------------------------*/
+    /*Parte donde se trabaja el teclado para el ingreso del nombre*/
+    .Teclado{
+        position: absolute;
+        background-color: rgb(253, 34, 84);
+        width: 10.8rem;
+        height: 2.3rem;
+        top: 36.8%;
+        left:38% ;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+    }
+    .form-control{
+        width: 13.2rem;
+        height: 2.7rem;
+        border: solid 2px rgb(49, 49, 49);
+        border-radius: 6px;  
+    }
+    
+    .Boton{
+        width: 12.8rem;
+        background-color: rgb(204, 29, 92);
+        height: 2rem;
+        position: absolute;
+        top: 84.2%;
+        left: 14%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+/*----------------------------------------------------------------------------*/
+    /*Para la info del pokemon*/
+    .InfoE{
+        position: absolute;
+        background-color: transparent;
+        width: 20.2rem;
+        height: 9.8rem;
+        top: 53%;
+        left: 4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.6rem;
+    }
+    .Vista{
+        width: 21.1rem;
+        height: 10.4rem;
+        background-color: rgb(31, 25, 88);
+        border-radius: 10px;
+        border:solid 2px  rgb(139, 133, 192);
+    }
+}
 
 
 

@@ -129,15 +129,26 @@ searchForm.addEventListener('submit', function (e) {
   // Busca la tarjeta del Pokémon con el ID correspondiente al término de búsqueda
   const pokemonCard = document.getElementById(searchTerm);
 
+  //Cambiando elcolor segun el tipo de pokemon
   if (pokemonCard) {
     // Si se encuentra la tarjeta, desplázate a ella
     pokemonCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Esto hará un desplazamiento suave
-    pokemonCard.classList.add("resaltante");
-    searchInput.value = "";
-    setTimeout(() =>{
-      pokemonCard.classList.remove('resaltante');
-    }, 5000);
 
+    //Definimos una const para buscar el tipo de pokemon en la lista
+    const typesPoke = listaPokemon.find( pokemon => pokemon.name.toLowerCase()=== searchTerm)?.types[0].type.name;
+    //Verificamos  atraves de un if si se encontro un tipo
+    if(typesPoke){
+      //Pasamos el nombre a minuscula
+      const typeClass = typesPoke.toLowerCase();
+      //Agregamos la clase del tipo de pokemon para poder cambiar el color
+      pokemonCard.classList.add(typeClass);
+      searchInput.value = "";
+      // Eliminara el color despues de un determinado tiempo para regresar a su color original
+      setTimeout(() => {
+        pokemonCard.classList.remove(typeClass); 
+      }, 5000);
+    }
+    //pokemonCard.classList.add("resaltante");
   } else {
     // Si no se encuentra la tarjeta, muestra un mensaje de error o realiza alguna otra acción
     window.alert("No se encuentra el Pokemon");

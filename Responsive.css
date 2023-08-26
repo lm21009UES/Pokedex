@@ -5,28 +5,46 @@
 
       .Contenido {
         /* Reducimos el grosor del borde */
-        border: solid 0.3rem rgb(49, 49, 49); 
+        border: solid 2px rgb(165, 162, 162);
         border-radius: 10px; 
          /* Agregando espacio superior para separación */
         margin-top: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
       }    
 
-    ul{
+      .IMGL{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .IMGL button{
+        margin-left: -4.5rem;
+        margin-right: 0.4rem;
+        color: rgb(165, 162, 162);
+        border: solid 2px rgb(165, 162, 162);
+       }
+
+       .Logo1{
+        margin-left: -1rem;
+      }
+
+      ul{
         display: grid;
         /*Establecemos que sean dos columnas*/
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         /*Espacio que habra entre las opciones*/
         gap: 6px;
+        margin-left: -2.2rem;
       }
 
       ul button{
         width: 7.4rem;
         height: 3rem;
         cursor: pointer;
-      }
-      .Poke{
-        float: right;
-        width: 1.5rem;
+        margin-right: -1rem;
       }
 
     .busqueda{
