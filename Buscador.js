@@ -35,16 +35,18 @@ const Pokemon = (() =>{
           pokemonInf.innerHTML = '';
         //Limpiando la pantalla para mostrar una nueva imagen
         ImagenPoke.innerHTML = '';
+        //Eliminando las clases css para el cambio de color segun el tipo de pokemon
+        pokemonInf.className = '';
+//-------------------------------------------------------------
         //Creando los elementos para mostrar los datos
         const h4 = document.createElement('h4');
-        const Imagen = document.createElement('img');
         const Imagen2 = document.createElement('img');
         const Especie = document.createElement('h6');
         const Peso = document.createElement('h6');
         const Tipo = document.createElement('h6');
         const Habilidades = document.createElement('h6');
-        const Estadistica = document.createElement('h6');
-        const Movimientos = document.createElement('h6');
+        const Estadistica = document.createElement('span');
+        const Movimientos = document.createElement('span');
 //-------------------------------------------------------------
         //Caracterizticas del pokemon
         h4.textContent = data.name;
@@ -96,7 +98,7 @@ const Pokemon = (() =>{
       // Método para imprimir los datos
       function ImprimirDatos() {
         // Almacenando el valor del pokemon ingresado en una variable
-        const pokemonB = Buscar.value;
+        const pokemonB = Buscar.value.toLowerCase();
 
         // Validación del ingreso de un pokemon
         if (pokemonB === '') {
@@ -112,13 +114,12 @@ const Pokemon = (() =>{
             Buscar.value = '';
         }
     }
-    
     return {
         callPokemon,
         ImprimirDatos
     };
 })();
-
+//-------------------------------------------------------------
 //Evento encargado de la busqueda
 btnBus.addEventListener('click', (e) => {
     e.preventDefault();
