@@ -59,8 +59,6 @@ const PokemonEstruc = (() => {
 
       // Esperar a que todas las promesas se completen antes de continuar
       await Promise.all(promesas);
-
-      console.log(listaPokemon);
     } catch (error) {
       console.error(error);
     }
@@ -99,7 +97,39 @@ const PokemonEstruc = (() => {
   return {dibujarPokemon};
 });
 
-document.addEventListener("DOMContentLoaded",PokemonEstruc().dibujarPokemon("Ver todos"));
+document.addEventListener("DOMContentLoaded", () => {
+  PokemonEstruc().dibujarPokemon("Ver todos")
+    .then(() => {
+      const mostrar = document.querySelectorAll(".pokemon-card");
+
+      mostrar.forEach(element => {
+        element.addEventListener("click", function() {
+          var card = document.querySelector(".cardT");
+
+          // Muestra la tarjeta con una transición de opacidad
+          card.style.display = "block";
+          setTimeout(function() {
+            card.style.opacity = "1"; // Hace que la tarjeta sea visible
+          }, 10); // Se necesita un pequeño retraso para que la transición funcione correctamente
+        });
+      });
+      const salir = document.querySelector("#salir");
+      salir.addEventListener("click", () =>{
+        var card = document.querySelector(".cardT");
+
+        // Oculta la tarjeta con una transición de opacidad
+        card.style.opacity = "0"; // Hace que la tarjeta sea invisible
+        setTimeout(function() {
+          card.style.display = "none";
+        }, 500); // Espera a que termine la transición y luego oculta la tarjeta
+      })
+    })
+    .catch(error => {
+      // Manejar errores si ocurren en PokemonEstruc().dibujarPokemon("Ver todos")
+      console.error(error);
+    });
+});
+
 
 const remover = () =>{
   const cards = document.querySelector("#pokemonCards");
@@ -154,3 +184,22 @@ searchForm.addEventListener('submit', function (e) {
     window.alert("No se encuentra el Pokemon");
   }
 });
+
+const generalidad = document.querySelectorAll(".nav-link");
+const campos = document.querySelectorAll("#campo");
+generalidad.forEach((element, indice) => {
+    element.addEventListener("click", () =>{
+        generalidad.forEach(element => {
+            element.classList.remove("active")
+        });
+        element.classList.add("active");
+        for (let index = 0; index < campos.length; index++) {
+            if(indice===index){
+                campos[index].classList.remove("d-none");
+            }
+            else{
+                campos[index].classList.add("d-none");
+            }
+        }
+    })
+  });

@@ -98,7 +98,7 @@ const Pokemon = (() =>{
       // Método para imprimir los datos
       function ImprimirDatos() {
         // Almacenando el valor del pokemon ingresado en una variable
-        const pokemonB = Buscar.value;
+        const pokemonB = Buscar.value.toLowerCase();
 
         // Validación del ingreso de un pokemon
         if (pokemonB === '') {
