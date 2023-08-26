@@ -1,5 +1,74 @@
 // ... otros códigos ...
+// ... otros códigos ...
+//Objetos que tendran la informacion de los pokemones
+function Pokemon(id, nombre, especie, altura, peso, tipo, habilidades, genero){
+  this.id = id;
+  this.nombre = nombre
+  this.especie = especie;
+  this.altura = altura;
+  this.peso = peso;
+  this.tipo = tipo;
+  this.habilidades = habilidades;
+  this.genero = genero;
+}
 
+function PokemonDescription(id, nombre, especie, altura, peso, tipo, habilidades, genero, grupoHuevos, cicloHuevos){
+  Pokemon.call(this,id, nombre, especie, altura, peso, tipo, habilidades, genero);
+  this.grupoHuevos = grupoHuevos;
+  this.cicloHuevos = cicloHuevos;
+}
+
+function PokemonLive(id, nombre, especie, altura, peso, tipo, habilidades, genero, grupoHuevos, cicloHuevos, hp, attack, defender, spAtack, spDefender, Speed, Total){
+  PokemonDescription.call(this,id, nombre, especie, altura, peso, tipo, habilidades, genero, grupoHuevos, cicloHuevos);
+  this.hp = hp;
+  this.attack = attack;
+  this.defender = defender;
+  this.spAtack = spAtack;
+  this.spDefender = spDefender;
+  this.Speed = Speed;
+  this.Total = Total;
+}
+// URL base de la API para obtener los primeros 150 Pokémon
+const apiURLindividual = "https://pokeapi.co/api/v2/pokemon/"
+//lista para almacenar los pokemones
+const listaPokemon = [];
+const PokemonEstruc = (() =>{
+  const _cargarPokemones = () =>{
+    for(let index = 1; index<=150; index++){
+      async function obtenerDatosDesdeAPI(apiURL) {
+        try {
+          const response = await fetch(apiURL);
+      
+          if (!response.ok) {
+            throw new Error('No se pudo obtener los datos desde la API');
+          }
+      
+          const data = await response.json();
+          // Aquí puedes trabajar con los datos como lo harías normalmente
+          listaPokemon.push(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      
+      // Llamar a la función con la URL de la API
+      let apiUrl = apiURLindividual+index;
+      obtenerDatosDesdeAPI(apiUrl);
+    }
+    console.log(listaPokemon);
+  }
+  const _dibujarPokemones = (option) =>{
+    
+  }
+  const dibujarPokemon = (options) =>{
+    _cargarPokemones();
+    _dibujarPokemones(options);
+  }
+
+  return {dibujarPokemon};
+})
+
+PokemonEstruc().dibujarPokemon();
 // URL base de la API para obtener los primeros 150 Pokémon
 const apiURL = 'https://pokeapi.co/api/v2/pokemon?limit=150';
 // ... otros códigos ...
