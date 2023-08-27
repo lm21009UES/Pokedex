@@ -105,24 +105,133 @@ document.addEventListener("DOMContentLoaded", () => {
       mostrar.forEach(element => {
         element.addEventListener("click", function() {
           var card = document.querySelector(".cardT");
+          var mostrando = element.getAttribute('id');
+          var tem = '';
+          listaPokemon.forEach(element => {
+            if(element.name.toLowerCase() == mostrando){
+              tem= element;
+            }
+          });
+          console.log(tem.name);
+          card.innerHTML = `
+                  
+          <div class="cardTHeader">
+            <i id="salir" class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="cardTImg">
+            <img src="${tem.sprites.versions['generation-v']['black-white'].animated.front_default}" alt="${tem.name}" id="imgpokemon" style="width: 30%; height: auto;">
+          </div>
+          <div class="cardTNav">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Base Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Evolution</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">moves</a>
+              </li>
+            </ul>
+          </div>
+          <div class="cardTBody">
+            <div id="campo">
+              <div class="row">
+                <div class="col-5">
+                  <ul>
+                    <li>Especies: ${tem.name.toUpperCase()}</li>
+                    <li>Height: ${tem.height}</li>
+                    <li>Weight: ${tem.weight}</li>
+                    <li>Abilities: ${tem.abilities[0].ability.name}</li>
+                    <li>Base Experience: ${tem.base_experience}</li>
+                  </ul>
+                </div>
+                <div class="col-7">
+                  <ul id="generalidades">
+                    
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h5 style="padding-left: 8%;">Breanding</h5>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <ul>
+                    <li>Gender</li>
+                    <li>Egg Groups</li>
+                    <li>Egg Cycle</li>
+                  </ul>
+                </div>
+                <div class="col-8">
+                  <ul id="breading">
 
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="d-none" id="campo">
+              <div class="row">
+                <div class="col-4">
+                  <ul>
+                    <li>HP</li>
+                    <li>Attack</li>
+                    <li>Defender</li>
+                    <li>Sp. Atk</li>
+                    <li>Sp. Def</li>
+                    <li>Speed</li>
+                    <li>Total</li>
+                  </ul>
+                </div>
+                <div class="col-8"></div>
+              </div>
+              <div>
+                <h5>Type defenses</h5>
+              </div>
+              <div class="row">
+                <div class="col-12"></div>
+              </div>
+            </div>
+          </div>`;
+          const generalidad = document.querySelectorAll(".nav-link");
+          const campos = document.querySelectorAll("#campo");
+          generalidad.forEach((element, indice) => {
+            element.addEventListener("click", () =>{
+              generalidad.forEach(element => {
+                  element.classList.remove("active")
+              });
+              element.classList.add("active");
+              for (let index = 0; index < campos.length; index++) {
+                if(indice===index){
+                  campos[index].classList.remove("d-none");
+                }
+                else{
+                  campos[index].classList.add("d-none");
+                }
+              }
+            })
+          });
           // Muestra la tarjeta con una transición de opacidad
           card.style.display = "block";
           setTimeout(function() {
             card.style.opacity = "1"; // Hace que la tarjeta sea visible
           }, 10); // Se necesita un pequeño retraso para que la transición funcione correctamente
+          const salir = document.querySelector("#salir");
+          salir.addEventListener("click", () =>{
+          var card = document.querySelector(".cardT");
+        
+          // Oculta la tarjeta con una transición de opacidad
+          card.style.opacity = "0"; // Hace que la tarjeta sea invisible
+          setTimeout(function() {
+            card.style.display = "none";
+          }, 500); // Espera a que termine la transición y luego oculta la tarjeta
+          
+        })
         });
       });
-      const salir = document.querySelector("#salir");
-      salir.addEventListener("click", () =>{
-        var card = document.querySelector(".cardT");
-
-        // Oculta la tarjeta con una transición de opacidad
-        card.style.opacity = "0"; // Hace que la tarjeta sea invisible
-        setTimeout(function() {
-          card.style.display = "none";
-        }, 500); // Espera a que termine la transición y luego oculta la tarjeta
-      })
     })
     .catch(error => {
       // Manejar errores si ocurren en PokemonEstruc().dibujarPokemon("Ver todos")
@@ -142,7 +251,144 @@ list.forEach(element => {//con un foreach recorremos toda la lista
     const category = element.getAttribute("id");
     // Recarga la página con el nuevo parámetro en la URL
     remover();
-    PokemonEstruc().dibujarPokemon(category);
+    PokemonEstruc().dibujarPokemon(category)
+    .then(() => {
+      const mostrar = document.querySelectorAll(".pokemon-card");
+
+      mostrar.forEach(element => {
+        element.addEventListener("click", function() {
+          var card = document.querySelector(".cardT");
+          var mostrando = element.getAttribute('id');
+          var tem = '';
+          listaPokemon.forEach(element => {
+            if(element.name.toLowerCase() == mostrando){
+              tem= element;
+            }
+          });
+          console.log(tem.name);
+          card.innerHTML = `
+                  
+          <div class="cardTHeader">
+            <i id="salir" class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="cardTImg">
+            <img src="${tem.sprites.versions['generation-v']['black-white'].animated.front_default}" alt="${tem.name}" id="imgpokemon" style="width: 30%; height: auto;">
+          </div>
+          <div class="cardTNav">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Base Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Evolution</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">moves</a>
+              </li>
+            </ul>
+          </div>
+          <div class="cardTBody">
+            <div id="campo">
+              <div class="row">
+                <div class="col-5">
+                  <ul>
+                    <li>Especies: ${tem.name.toUpperCase()}</li>
+                    <li>Height: ${tem.height}</li>
+                    <li>Weight: ${tem.weight}</li>
+                    <li>Abilities: ${tem.abilities[0].ability.name}</li>
+                    <li>Base Experience: ${tem.base_experience}</li>
+                  </ul>
+                </div>
+                <div class="col-7">
+                  <ul id="generalidades">
+                    
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <h5 style="padding-left: 8%;">Breanding</h5>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <ul>
+                    <li>Gender</li>
+                    <li>Egg Groups</li>
+                    <li>Egg Cycle</li>
+                  </ul>
+                </div>
+                <div class="col-8">
+                  <ul id="breading">
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="d-none" id="campo">
+              <div class="row">
+                <div class="col-4">
+                  <ul>
+                    <li>HP</li>
+                    <li>Attack</li>
+                    <li>Defender</li>
+                    <li>Sp. Atk</li>
+                    <li>Sp. Def</li>
+                    <li>Speed</li>
+                    <li>Total</li>
+                  </ul>
+                </div>
+                <div class="col-8"></div>
+              </div>
+              <div>
+                <h5>Type defenses</h5>
+              </div>
+              <div class="row">
+                <div class="col-12"></div>
+              </div>
+            </div>
+          </div>`;
+          const generalidad = document.querySelectorAll(".nav-link");
+          const campos = document.querySelectorAll("#campo");
+          generalidad.forEach((element, indice) => {
+            element.addEventListener("click", () =>{
+              generalidad.forEach(element => {
+                  element.classList.remove("active")
+              });
+              element.classList.add("active");
+              for (let index = 0; index < campos.length; index++) {
+                if(indice===index){
+                  campos[index].classList.remove("d-none");
+                }
+                else{
+                  campos[index].classList.add("d-none");
+                }
+              }
+            })
+          });
+          // Muestra la tarjeta con una transición de opacidad
+          card.style.display = "block";
+          setTimeout(function() {
+            card.style.opacity = "1"; // Hace que la tarjeta sea visible
+          }, 10); // Se necesita un pequeño retraso para que la transición funcione correctamente
+          const salir = document.querySelector("#salir");
+          salir.addEventListener("click", () =>{
+          var card = document.querySelector(".cardT");
+        
+          // Oculta la tarjeta con una transición de opacidad
+          card.style.opacity = "0"; // Hace que la tarjeta sea invisible
+          setTimeout(function() {
+            card.style.display = "none";
+          }, 500); // Espera a que termine la transición y luego oculta la tarjeta
+        })
+        });
+      });
+    })
+    .catch(error => {
+      // Manejar errores si ocurren en PokemonEstruc().dibujarPokemon("Ver todos")
+      console.error(error);
+    });
   })
 });
 
@@ -185,21 +431,3 @@ searchForm.addEventListener('submit', function (e) {
   }
 });
 
-const generalidad = document.querySelectorAll(".nav-link");
-const campos = document.querySelectorAll("#campo");
-generalidad.forEach((element, indice) => {
-    element.addEventListener("click", () =>{
-        generalidad.forEach(element => {
-            element.classList.remove("active")
-        });
-        element.classList.add("active");
-        for (let index = 0; index < campos.length; index++) {
-            if(indice===index){
-                campos[index].classList.remove("d-none");
-            }
-            else{
-                campos[index].classList.add("d-none");
-            }
-        }
-    })
-  });
