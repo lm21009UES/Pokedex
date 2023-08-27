@@ -399,6 +399,7 @@ list-style: none;
 
 @media (max-width: 400px){
 .cardT{
+  box-sizing: border-box;
     width: 60%;
     height: auto;
     font-size: 12px;
