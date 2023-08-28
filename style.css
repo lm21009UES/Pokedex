@@ -279,7 +279,7 @@ grid-template-columns: 33.33% 33.33% 33.33%;
 place-items: center;
 }
 
-@media (max-width: 400px){
+@media (max-width: 500px){
 .pokemon-card-container{
   width: 100%;
   grid-template-columns: 50% 50%;
@@ -304,7 +304,7 @@ place-items: center;
 .cardT{
 display: none;
   position: fixed;
-  width: 40%;
+  width: 30%;
   height: auto;
   font-size: 12px;
   border-radius: 25px 25px 5px 5px;
@@ -352,7 +352,8 @@ background-color: white;
 }
 .cardTNav {
 width: 100%;
-display: flex;
+display: grid;
+grid-template-columns: 33.33% 33.33% 33.33%;
 justify-content: center;
 background-color: white;
 border-radius: 25px 25px 0 0;
@@ -362,6 +363,10 @@ border-radius: 25px 25px 0 0;
 box-sizing: border-box;
 margin: 10px 2px 2px 0px;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cardTNav li{
+  width: 100%;
 }
 
 .nav-item .active{
@@ -397,17 +402,17 @@ ul{
 list-style: none;
 }
 
-@media (max-width: 400px){
+@media (max-width: 500px){
 .cardT{
   box-sizing: border-box;
-    width: 60%;
-    height: auto;
-    font-size: 12px;
-    border-radius: 25px 25px 5px 5px;
-    box-shadow: 15px 15px 20px;
-    background: linear-gradient(to right top, #c6e6df, #6dd2aa, #75d38f, #88d26f, #a3cf4a);
-    top: 50%; /* Centra verticalmente */
-  left: 35%;
+  width: 80%;
+  height: auto;
+  font-size: 12px;
+  border-radius: 25px 25px 5px 5px;
+  box-shadow: 15px 15px 20px;
+  background: linear-gradient(to right top, #c6e6df, #6dd2aa, #75d38f, #88d26f, #a3cf4a);
+  top: 50%; /* Centra verticalmente */
+  left: 50%;
   transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
   transition: opacity 0.5s ease-in-out; /* Aplica una transición de opacidad suave */
   opacity: 0; /* Inicialmente, la tarjeta estará invisible */
@@ -416,7 +421,6 @@ list-style: none;
 .cardTNav li{
   font-size: 9px;
   box-sizing: border-box;
-  margin: 10px 2px 2px 0px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 }
@@ -434,3 +438,52 @@ list-style: none;
 .dragon{ background:linear-gradient(#157aa8,#4240af); color:white;}
 .grass{background:linear-gradient(#449761,#52911e); color:white;}
 .ground{background:linear-gradient(#db9942,#5e5447); color:white;}
+
+.cardnormal {background: #6190E8;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardwater {background: #34e89e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardfire {background: #FDC830;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardbug{background: #67B26F;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardrock{background: #3E5151;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardghost{background: #004FF9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFF94C, #004FF9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.cardelectric{background: #D1913C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFD194, #D1913C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFD194, #D1913C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardpoison{background: #52c234;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #061700, #52c234);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #061700, #52c234); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardpsychic{background: #e9d362;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #333333, #e9d362);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.carddragon{background: #FC354C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardgrass{background: #666600;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #999966, #666600);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #999966, #666600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+.cardground{background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e74c3c, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e74c3c, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
