@@ -112,7 +112,47 @@ document.addEventListener("DOMContentLoaded", () => {
               tem= element;
             }
           });
-          console.log(tem.name);
+          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater");
+          if(tem.types[0].type.name =="bug"){
+            
+            card.classList.add("cardbug");
+          }
+          else if(tem.types[0].type.name=="dragon"){
+            card.classList.add("carddragon");
+          }
+          else if(tem.types[0].type.name=="electric"){
+            card.classList.add("cardelectric");
+          }
+          else if(tem.types[0].type.name=="fire"){
+            card.classList.add("cardfire");
+          }
+          else if(tem.types[0].type.name == "fighting"){
+            card.classList.add("cardfighting");
+          }
+          else if(tem.types[0].type.name=="grass"){
+            card.classList.add("cardgrass");
+          }
+          else if(tem.types[0].type.name == "ground"){
+            card.classList.add("cardground");
+          }
+          else if(tem.types[0].type.name=="ghost"){
+            card.classList.add("cardghost");
+          }
+          else if(tem.types[0].type.name=="normal"){
+            card.classList.add("cardnormal");
+          }
+          else if(tem.types[0].type.name=="poison"){
+            card.classList.add("cardpoison");
+          }
+          else if(tem.types[0].type.name=="psychic"){
+            card.classList.add("cardpsychic");
+          }
+          else if(tem.types[0].type.name=="rock"){
+            card.classList.add("cardrock");
+          }
+          else if(tem.types[0].type.name=="water"){
+            card.classList.add("cardwater");
+          }
           card.innerHTML = `
                   
           <div class="cardTHeader">
@@ -126,12 +166,13 @@ document.addEventListener("DOMContentLoaded", () => {
               <li class="nav-item">
                 <a class="nav-link active">About</a>
               </li>
+            </ul>
+            <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
                 <a class="nav-link">Base Stats</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Evolution</a>
-              </li>
+            </ul>
+            <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
                 <a class="nav-link">moves</a>
               </li>
@@ -140,59 +181,56 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="cardTBody">
             <div id="campo">
               <div class="row">
-                <div class="col-5">
+                <div class="col">
                   <ul>
-                    <li>Especies: ${tem.name.toUpperCase()}</li>
-                    <li>Height: ${tem.height}</li>
-                    <li>Weight: ${tem.weight}</li>
-                    <li>Abilities: ${tem.abilities[0].ability.name}</li>
-                    <li>Base Experience: ${tem.base_experience}</li>
-                  </ul>
-                </div>
-                <div class="col-7">
-                  <ul id="generalidades">
-                    
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <h5 style="padding-left: 8%;">Breanding</h5>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <ul>
-                    <li>Gender</li>
-                    <li>Egg Groups</li>
-                    <li>Egg Cycle</li>
-                  </ul>
-                </div>
-                <div class="col-8">
-                  <ul id="breading">
-
+                    <li style="width: 100%">Especies: ${tem.name.toUpperCase()}</li>
+                    <li style="width: 100%">Height: ${(tem.height)*10} cm</li>
+                    <li style="width: 100%">Weight: ${(tem.weight)/100} kg</li>
+                    <li style="width: 100%">Abilities: ${tem.abilities[0].ability.name}</li>
+                    <li style="width: 100%">Base Experience: ${tem.base_experience}</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="d-none" id="campo">
               <div class="row">
-                <div class="col-4">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                   <ul>
-                    <li>HP</li>
-                    <li>Attack</li>
-                    <li>Defender</li>
-                    <li>Sp. Atk</li>
-                    <li>Sp. Def</li>
-                    <li>Speed</li>
-                    <li>Total</li>
+                    <li style="width: 100%">HP: ${tem.stats[0].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Attack: ${tem.stats[1].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Defence: ${tem.stats[2].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Sp. Atk: ${tem.stats[3].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Sp. Def: ${tem.stats[4].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Speed: ${tem.stats[5].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="100"></progress></li>
                   </ul>
                 </div>
-                <div class="col-8"></div>
               </div>
               <div>
-                <h5>Type defenses</h5>
+                <h5>Type</h5>
               </div>
               <div class="row">
-                <div class="col-12"></div>
+                <div class="col-12">
+                  <h4>${tem.types[0].type.name}</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div class="d-none" id="campo">
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <ul>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[0].move.name}</li>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[1].move.name}</li>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[2].move.name}</li>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[3].move.name}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>`;
@@ -265,7 +303,47 @@ list.forEach(element => {//con un foreach recorremos toda la lista
               tem= element;
             }
           });
-          console.log(tem.name);
+          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater");
+          if(tem.types[0].type.name =="bug"){
+            
+            card.classList.add("cardbug");
+          }
+          else if(tem.types[0].type.name=="dragon"){
+            card.classList.add("carddragon");
+          }
+          else if(tem.types[0].type.name=="electric"){
+            card.classList.add("cardelectric");
+          }
+          else if(tem.types[0].type.name=="fire"){
+            card.classList.add("cardfire");
+          }
+          else if(tem.types[0].type.name == "fighting"){
+            card.classList.add("cardfighting");
+          }
+          else if(tem.types[0].type.name=="grass"){
+            card.classList.add("cardgrass");
+          }
+          else if(tem.types[0].type.name == "ground"){
+            card.classList.add("cardground");
+          }
+          else if(tem.types[0].type.name=="ghost"){
+            card.classList.add("cardghost");
+          }
+          else if(tem.types[0].type.name=="normal"){
+            card.classList.add("cardnormal");
+          }
+          else if(tem.types[0].type.name=="poison"){
+            card.classList.add("cardpoison");
+          }
+          else if(tem.types[0].type.name=="psychic"){
+            card.classList.add("cardpsychic");
+          }
+          else if(tem.types[0].type.name=="rock"){
+            card.classList.add("cardrock");
+          }
+          else if(tem.types[0].type.name=="water"){
+            card.classList.add("cardwater");
+          }
           card.innerHTML = `
                   
           <div class="cardTHeader">
@@ -279,12 +357,13 @@ list.forEach(element => {//con un foreach recorremos toda la lista
               <li class="nav-item">
                 <a class="nav-link active">About</a>
               </li>
+            </ul>
+            <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
                 <a class="nav-link">Base Stats</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Evolution</a>
-              </li>
+            </ul>
+            <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
                 <a class="nav-link">moves</a>
               </li>
@@ -293,59 +372,56 @@ list.forEach(element => {//con un foreach recorremos toda la lista
           <div class="cardTBody">
             <div id="campo">
               <div class="row">
-                <div class="col-5">
+                <div class="col">
                   <ul>
-                    <li>Especies: ${tem.name.toUpperCase()}</li>
-                    <li>Height: ${tem.height}</li>
-                    <li>Weight: ${tem.weight}</li>
-                    <li>Abilities: ${tem.abilities[0].ability.name}</li>
-                    <li>Base Experience: ${tem.base_experience}</li>
-                  </ul>
-                </div>
-                <div class="col-7">
-                  <ul id="generalidades">
-                    
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <h5 style="padding-left: 8%;">Breanding</h5>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <ul>
-                    <li>Gender</li>
-                    <li>Egg Groups</li>
-                    <li>Egg Cycle</li>
-                  </ul>
-                </div>
-                <div class="col-8">
-                  <ul id="breading">
-
+                    <li style="width: 100%">Especies: ${tem.name.toUpperCase()}</li>
+                    <li style="width: 100%">Height: ${(tem.height)*10} cm</li>
+                    <li style="width: 100%">Weight: ${(tem.weight)/100} kg</li>
+                    <li style="width: 100%">Abilities: ${tem.abilities[0].ability.name}</li>
+                    <li style="width: 100%">Base Experience: ${tem.base_experience}</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="d-none" id="campo">
               <div class="row">
-                <div class="col-4">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                   <ul>
-                    <li>HP</li>
-                    <li>Attack</li>
-                    <li>Defender</li>
-                    <li>Sp. Atk</li>
-                    <li>Sp. Def</li>
-                    <li>Speed</li>
-                    <li>Total</li>
+                    <li style="width: 100%">HP: ${tem.stats[0].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Attack: ${tem.stats[1].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Defence: ${tem.stats[2].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Sp. Atk: ${tem.stats[3].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Sp. Def: ${tem.stats[4].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%">Speed: ${tem.stats[5].base_stat}</li>
+                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="100"></progress></li>
                   </ul>
                 </div>
-                <div class="col-8"></div>
               </div>
               <div>
-                <h5>Type defenses</h5>
+                <h5>Type</h5>
               </div>
               <div class="row">
-                <div class="col-12"></div>
+                <div class="col-12">
+                  <h4>${tem.types[0].type.name}</h4>
+                </div>
+              </div>
+            </div>
+            
+            <div class="d-none" id="campo">
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <ul>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[0].move.name}</li>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[1].move.name}</li>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[2].move.name}</li>
+                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[3].move.name}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>`;
