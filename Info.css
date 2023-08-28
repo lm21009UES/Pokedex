@@ -23,8 +23,10 @@ body{
     .Logo2Pokedex{
         width: 10rem;
     }
+    .LogoGif{
+        width: 7rem;
+    }
     
-
     /*Contiene la imagen de la pokedex empleada*/
     .card{
         width: 48rem;
