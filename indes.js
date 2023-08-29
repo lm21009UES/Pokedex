@@ -1,59 +1,42 @@
-// ... otros códigos ...
-//Objetos que tendran la informacion de los pokemones
-function Pokemon(id, nombre, especie, altura, peso, tipo, habilidades, genero){
-  this.id = id;
-  this.nombre = nombre
-  this.especie = especie;
-  this.altura = altura;
-  this.peso = peso;
-  this.tipo = tipo;
-  this.habilidades = habilidades;
-  this.genero = genero;
-}
 
-function PokemonDescription(id, nombre, especie, altura, peso, tipo, habilidades, genero, grupoHuevos, cicloHuevos){
-  Pokemon.call(this,id, nombre, especie, altura, peso, tipo, habilidades, genero);
-  this.grupoHuevos = grupoHuevos;
-  this.cicloHuevos = cicloHuevos;
-}
-
-function PokemonLive(id, nombre, especie, altura, peso, tipo, habilidades, genero, grupoHuevos, cicloHuevos, hp, attack, defender, spAtack, spDefender, Speed, Total){
-  PokemonDescription.call(this,id, nombre, especie, altura, peso, tipo, habilidades, genero, grupoHuevos, cicloHuevos);
-  this.hp = hp;
-  this.attack = attack;
-  this.defender = defender;
-  this.spAtack = spAtack;
-  this.spDefender = spDefender;
-  this.Speed = Speed;
-  this.Total = Total;
-}
 // URL base de la API para obtener los primeros 150 Pokémon
 const apiURL = 'https://pokeapi.co/api/v2/pokemon?limit=150';
+//URL base para pedir los pokemones de manera individual a la API
 const apiURLindividual = "https://pokeapi.co/api/v2/pokemon/"
 //lista para almacenar los pokemones
 let listaPokemon = [];
-const PokemonEstruc = (() => {
-  listaPokemon = [];
-  const _cargarPokemones = async () => {
-    try {
-      const promesas = [];
 
+//objeto principal que contendra metodos publicos y privados
+const PokemonEstruc = (() => {
+  //reiniciamos la lista de pokemones, cada vez que llamemos la funcion para que contenga los pokemones
+  listaPokemon = [];
+  //creamos un metodo privado para cargar la informacion de los pokemones
+  const _cargarPokemones = async () => {//realizamos un async await
+    try {
+      const promesas = [];//creamos una variable que nos almacene la informacion temporal de los pokemones
+      //utilizamos un for para realizar las 150 peticiones
       for (let index = 1; index <= 150; index++) {
+        //teniendo la ulr de la api, solo agregamos el indice para asi pedir uno a uno los pokemones
         const apiUrl = apiURLindividual + index;
+        //hacemos la peticion obteniendo la informacion del pokemon i
         const promesa = fetch(apiUrl)
           .then((response) => {
+            //si la peticion tine un error, entonces retornamos un mensaje de erorr
             if (!response.ok) {
               throw new Error('No se pudo obtener los datos desde la API');
             }
+            //si la peticion corre con exito, retornamos una respuesta en formato json
             return response.json();
           })
+          //luego de haber obtenido la repuesta analizamos el objeto que se nos ha sido devuelto
           .then((data) => {
+            //agregamos el objeto a nuestra lista que utilizaremos para manejar los pokemones
             listaPokemon.push(data);
-          })
+          })//en caso de que ocurra un error, retornamos un mensaje
           .catch((error) => {
             console.error(error);
           });
-
+        //manejamos los elementos temporales que nos retornan las promesas realizadas
         promesas.push(promesa);
       }
 
@@ -62,19 +45,27 @@ const PokemonEstruc = (() => {
     } catch (error) {
       console.error(error);
     }
-  };
+  };//fin de metodo para pedir la informacion
+
+  //creacion de metodo para dibujar los pokemones, inicialmente se pide un parametro que indicara el tipo de pokemones a dibujar
   const _dibujarPokemones = (option) =>{
+    //capturamos el div donde se agregaran las card de cada pokemon
     const carPokemon = document.querySelector("#pokemonCards");
+    //una vez que se tenga la lista con toda la informacion de los pokemones, la recorremos con un for
     for(let i = 0; i<listaPokemon.length; i++){
+      //analizamos el parametro que se ha pasado en la funcion, si este es ver todos, se mostraran todos los pokemones, de lo contrario
+      //se analizara si el tipo de pokemon i coincide con el parametro que estamos pasando a la funcion
       if(option ==="Ver todos" || listaPokemon[i].types[0].type.name === option){
+        //si la verifiacion es verdadero, creamos un elemento div
         const card = document.createElement('div');
+        //le agregamos una clase pokemon-card que se encuentra con los estilos en el archivo style.css
         card.classList.add('pokemon-card');
         card.id = listaPokemon[i].name.toLowerCase(); // Establece el ID igual al  nombre del Pokémon en minúsculas
         // Crear la imagen del Pokémon
         const pokemonImage = document.createElement('img');
-        pokemonImage.src = listaPokemon[i].sprites.front_default;
-        pokemonImage.alt = listaPokemon[0].name;
-        pokemonImage.classList.add('pokemon-image');
+        pokemonImage.src = listaPokemon[i].sprites.front_default;//agrega un sprite proporcionado por la API
+        pokemonImage.alt = listaPokemon[0].name;//se le asigna un alt para personas no vidente
+        pokemonImage.classList.add('pokemon-image');//agregamos una clase personalizada para las imagenes en las card
         // Crear el nombre del Pokémon
         const pokemonName = document.createElement('h2');
         pokemonName.textContent = listaPokemon[i].name.toUpperCase();
@@ -85,74 +76,97 @@ const PokemonEstruc = (() => {
         card.appendChild(pokemonImage);
         card.appendChild(pokemonName);
         card.appendChild(pokemonType);
+        //agregamos la card con tada la informacion al div que se encuntra en el index.html
         carPokemon.appendChild(card);
       }
     }
   }
-  const dibujarPokemon = async (options) => {
-    await _cargarPokemones();
-    _dibujarPokemones(options);
+
+  //creacion del unico metodo publico accesible para ejecutar los metodos privados
+  const dibujarPokemon = async (options) => {//utilizamos una funcion async await, ya que el primer metodo para pedir datos es asincrono,
+    //que llevaria tiempo realizarla, de esta manera se asegura que los datos se carguen primeramente
+    await _cargarPokemones();//se cargan los datos en la lista
+    _dibujarPokemones(options);//se dibuja los pokemones de acuerdo al parametro que se ha especificado
   };
 
-  return {dibujarPokemon};
+  return {dibujarPokemon};//retornamos lo que realiza el metodo dibujarPokemon
 });
 
+//evento que cargara la informacion al iniciar la pagina
 document.addEventListener("DOMContentLoaded", () => {
-  PokemonEstruc().dibujarPokemon("Ver todos")
+  //llamamos al objeto principal, PokemonEstruc junto con su funcion de dibujarPokemon, con el parametro para mostrar todos los pokemones inicialmente
+  PokemonEstruc().dibujarPokemon("Ver todos")//aseguramos que se carguen los datos primero
     .then(() => {
+      //cargado los datos, capturamos todas las tarjetas de los pokemones
       const mostrar = document.querySelectorAll(".pokemon-card");
-
+      //recorremos el arreglo que contiene cada tarjeta
       mostrar.forEach(element => {
+        //agregamos un evento click a cada tarjeta
         element.addEventListener("click", function() {
-          var card = document.querySelector(".cardT");
-          var mostrando = element.getAttribute('id');
-          var tem = '';
-          listaPokemon.forEach(element => {
-            if(element.name.toLowerCase() == mostrando){
-              tem= element;
+          var card = document.querySelector(".cardT");//se captura la tarjeta que servira para mostrar las generalidades del pokemon o card seleccionado
+          var mostrando = element.getAttribute('id');//cada tarjeta tiene como id el nombre del pokemon, lo capturamos
+          var tem = '';//creamos una variable temporal para capturar el objeto
+          listaPokemon.forEach(element => {//recorremos toda la lista de pokemon para encontrarlo
+            if(element.name.toLowerCase() == mostrando){//si el pokemon se encuentra en la lista
+              tem= element;//la variable temporal guardara esa informacion
             }
           });
+          //removemos todas las clases para fondo de las card, ya que cada card se mostrara con un color acorde al tipo de pokemon
           card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater");
+          //verificamos el tipo de pokemon y asignamos una clase para fondo
           if(tem.types[0].type.name =="bug"){
-            
+            //fondo para pokemon tipo bug
             card.classList.add("cardbug");
           }
           else if(tem.types[0].type.name=="dragon"){
+            //fongo para pokemon tipo dragon
             card.classList.add("carddragon");
           }
           else if(tem.types[0].type.name=="electric"){
+            //fongo para pokemon tipo electric
             card.classList.add("cardelectric");
           }
           else if(tem.types[0].type.name=="fire"){
+            //fondo para pokemon tipo fire
             card.classList.add("cardfire");
           }
           else if(tem.types[0].type.name == "fighting"){
+            //fondo para pokemon tipo fighting
             card.classList.add("cardfighting");
           }
           else if(tem.types[0].type.name=="grass"){
+            //fongo para pokemon tipo grass
             card.classList.add("cardgrass");
           }
           else if(tem.types[0].type.name == "ground"){
+            //fondo para pokemon tipo ground
             card.classList.add("cardground");
           }
           else if(tem.types[0].type.name=="ghost"){
+            //fondo para pokemon tipo ghost
             card.classList.add("cardghost");
           }
           else if(tem.types[0].type.name=="normal"){
+            //fondo para pokemon tipo normal
             card.classList.add("cardnormal");
           }
           else if(tem.types[0].type.name=="poison"){
+             //fondo para pokemon tipo poison
             card.classList.add("cardpoison");
           }
           else if(tem.types[0].type.name=="psychic"){
+            //fondo para pokemon tipo psychic
             card.classList.add("cardpsychic");
           }
           else if(tem.types[0].type.name=="rock"){
+            //fondo para pokemon tipo rock
             card.classList.add("cardrock");
           }
           else if(tem.types[0].type.name=="water"){
+            //fondo para pokemon tipo water
             card.classList.add("cardwater");
           }
+          //asignamos informacion que contendra la card en la pagina
           card.innerHTML = `
                   
           <div class="cardTHeader">
@@ -197,17 +211,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                   <ul>
                     <li style="width: 100%">HP: ${tem.stats[0].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Attack: ${tem.stats[1].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Defence: ${tem.stats[2].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Sp. Atk: ${tem.stats[3].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Sp. Def: ${tem.stats[4].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Speed: ${tem.stats[5].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="150"></progress></li>
                   </ul>
                 </div>
               </div>
@@ -234,20 +248,25 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
           </div>`;
+          //cargada la informacion, la card contiene tres elementos en el nav, lo capturamos
           const generalidad = document.querySelectorAll(".nav-link");
+          //secciones que muestran la informacion de acuerdo a la eleccion del nav
           const campos = document.querySelectorAll("#campo");
-          generalidad.forEach((element, indice) => {
-            element.addEventListener("click", () =>{
-              generalidad.forEach(element => {
+          //recorremos el arreglo que nos retorna la captura de los elementos del nav,
+          generalidad.forEach((element, indice) => {//pasamos como parametro el elemento y el indice del mismo
+            element.addEventListener("click", () =>{//agregamos un evento a cada uno
+              generalidad.forEach(element => {//eliminamos la clase que pueden contener los elementos del nav
                   element.classList.remove("active")
               });
+              //el elemento clickeado le asignamos clase active para dar enfasis
               element.classList.add("active");
+              //recorremos el arreglo de los campos, y el indice que capturamos anteriormente servira para saver que campos mostrar
               for (let index = 0; index < campos.length; index++) {
-                if(indice===index){
-                  campos[index].classList.remove("d-none");
+                if(indice===index){//comparamos el indice con la variable index
+                  campos[index].classList.remove("d-none");//si son iguales removemos la clase que mantiene oculta la informacion
                 }
                 else{
-                  campos[index].classList.add("d-none");
+                  campos[index].classList.add("d-none");//los elmentos diferentes al indice seran ocultos
                 }
               }
             })
@@ -277,33 +296,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+//funcion para vaciar la informacion que se ha cargado en la pagina
 const remover = () =>{
-  const cards = document.querySelector("#pokemonCards");
-  cards.innerHTML = "";
+  const cards = document.querySelector("#pokemonCards");//seleccionamos el div principal que contiene todas las cards
+  cards.innerHTML = "";//eliminamos todo su contenido
 }
 
 const list = document.querySelectorAll(".btn-header");//capturamos toda la lista de categorias de pokemones
 list.forEach(element => {//con un foreach recorremos toda la lista
   element.addEventListener("click", ()=>{//agregamos evento a cada uno de los botones
-    const category = element.getAttribute("id");
-    // Recarga la página con el nuevo parámetro en la URL
-    remover();
-    PokemonEstruc().dibujarPokemon(category)
+    const category = element.getAttribute("id");//captura del id de los botones, contienen el nombre de la categoria
+    remover();//eliminamos toda la informacion del div principal
+    PokemonEstruc().dibujarPokemon(category)//hacemos que se carguen la informacion nuevamente y se dibujuen los pokemones de la categoria seleccionada
     .then(() => {
+      //se seleccionada un vector que contendra todas las card que se estan mostrando
       const mostrar = document.querySelectorAll(".pokemon-card");
-
+      //recorremos el arreglo
       mostrar.forEach(element => {
+        //eventro click para cada card
         element.addEventListener("click", function() {
+          //captura de card para caracteristicas
           var card = document.querySelector(".cardT");
-          var mostrando = element.getAttribute('id');
-          var tem = '';
-          listaPokemon.forEach(element => {
+          var mostrando = element.getAttribute('id');//obtencion del nombre del pokemon de la card
+          var tem = '';//variable temporal
+          listaPokemon.forEach(element => {//busqueda del pokemon en la lista de informacion
             if(element.name.toLowerCase() == mostrando){
               tem= element;
             }
           });
+          //removemos clases para fondo de tarjetas
           card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater");
+          //verificamos el tipo de pokemon y asignamos un background acorde a la categoria
           if(tem.types[0].type.name =="bug"){
             
             card.classList.add("cardbug");
@@ -344,6 +367,7 @@ list.forEach(element => {//con un foreach recorremos toda la lista
           else if(tem.types[0].type.name=="water"){
             card.classList.add("cardwater");
           }
+          //agregamos informacion de la api a la card
           card.innerHTML = `
                   
           <div class="cardTHeader">
@@ -388,17 +412,17 @@ list.forEach(element => {//con un foreach recorremos toda la lista
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                   <ul>
                     <li style="width: 100%">HP: ${tem.stats[0].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Attack: ${tem.stats[1].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Defence: ${tem.stats[2].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Sp. Atk: ${tem.stats[3].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Sp. Def: ${tem.stats[4].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="150"></progress></li>
                     <li style="width: 100%">Speed: ${tem.stats[5].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="100"></progress></li>
+                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="150"></progress></li>
                   </ul>
                 </div>
               </div>
@@ -425,20 +449,23 @@ list.forEach(element => {//con un foreach recorremos toda la lista
               </div>
             </div>
           </div>`;
+          //opciones del navbar de la tarjeta de caracteristicas
           const generalidad = document.querySelectorAll(".nav-link");
+          //partes donde se encuntra almacenada las caracteristicas
           const campos = document.querySelectorAll("#campo");
-          generalidad.forEach((element, indice) => {
+          generalidad.forEach((element, indice) => {//recorremos el arreglo de elementos del nav y capturamos el indice
             element.addEventListener("click", () =>{
-              generalidad.forEach(element => {
+              generalidad.forEach(element => {//removemos el estado activo de algun elemento del nav
                   element.classList.remove("active")
               });
+              //el elemento que ha sido clickeado se resalta para mostrar el click
               element.classList.add("active");
-              for (let index = 0; index < campos.length; index++) {
+              for (let index = 0; index < campos.length; index++) {//mostramos la seccion acorde al indice que se ha capturado
                 if(indice===index){
-                  campos[index].classList.remove("d-none");
+                  campos[index].classList.remove("d-none");//mostramos informacion
                 }
                 else{
-                  campos[index].classList.add("d-none");
+                  campos[index].classList.add("d-none");//se oculta campos que no tengan el mismo indice
                 }
               }
             })
