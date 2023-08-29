@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
           card.innerHTML = `
                   
           <div class="cardTHeader">
-            <i id="salir" class="fa-solid fa-circle-xmark"></i>
+            <i id="salir"><img src="./IMG/boton.png"></i>
           </div>
           <div class="cardTImg">
             <img src="${tem.sprites.versions['generation-v']['black-white'].animated.front_default}" alt="${tem.name}" id="imgpokemon" style="width: 30%; height: auto;">
@@ -371,7 +371,7 @@ list.forEach(element => {//con un foreach recorremos toda la lista
           card.innerHTML = `
                   
           <div class="cardTHeader">
-            <i id="salir" class="fa-solid fa-circle-xmark"></i>
+            <i id="salir"><img src="./IMG/boton.png"></i>
           </div>
           <div class="cardTImg">
             <img src="${tem.sprites.versions['generation-v']['black-white'].animated.front_default}" alt="${tem.name}" id="imgpokemon" style="width: 30%; height: auto;">
