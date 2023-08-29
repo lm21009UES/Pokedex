@@ -324,8 +324,18 @@ width: 100%;
 height: 20px;
 }
 
+.cardTHeader i{
+  width: 40px;
+  height: 50px;
+}
+
 .cardTHeader i:hover{
 cursor: pointer;
+}
+
+.cardTHeader img{
+  width: 25px;
+  height: auto;
 }
 
 .cardTImg{
@@ -403,26 +413,30 @@ list-style: none;
 }
 
 @media (max-width: 500px){
-.cardT{
-  box-sizing: border-box;
-  width: 80%;
-  height: auto;
-  font-size: 12px;
-  border-radius: 25px 25px 5px 5px;
-  box-shadow: 15px 15px 20px;
-  background: linear-gradient(to right top, #c6e6df, #6dd2aa, #75d38f, #88d26f, #a3cf4a);
-  top: 50%; /* Centra verticalmente */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
-  transition: opacity 0.5s ease-in-out; /* Aplica una transición de opacidad suave */
-  opacity: 0; /* Inicialmente, la tarjeta estará invisible */
-  z-index: 999; /* Asegura que la tarjeta esté por encima del contenido */
-}
-.cardTNav li{
-  font-size: 9px;
-  box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+  .cardT{
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    font-size: 12px;
+    border-radius: 25px 25px 5px 5px;
+    box-shadow: 15px 15px 20px;
+    background: linear-gradient(to right top, #c6e6df, #6dd2aa, #75d38f, #88d26f, #a3cf4a);
+    top: 50%; /* Centra verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
+    transition: opacity 0.5s ease-in-out; /* Aplica una transición de opacidad suave */
+    opacity: 0; /* Inicialmente, la tarjeta estará invisible */
+    z-index: 999; /* Asegura que la tarjeta esté por encima del contenido */
+  }
+  .cardTNav li{
+    font-size: 9px;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .cardTHeader img{
+    width: 20px;
+    height: auto;
+  }
 }
 
 /*Colores para caundo se busca el pokemon*/
