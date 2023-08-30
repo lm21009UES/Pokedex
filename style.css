@@ -501,3 +501,47 @@ background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, F
   background: -webkit-linear-gradient(to right, #e74c3c, #000000);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #e74c3c, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+
+/* Estilo para el contenedor de movimientos */
+.moves-container {
+  max-height: 300px; /* Ajusta esto según tus preferencias */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura */
+  overflow-x: hidden;
+  overflow-x: 0;
+  border: 1px solid #ccc; /* Puedes agregar un borde para mayor claridad */
+  padding: 10px; /* Ajusta el espaciado interno según tus preferencias */
+}
+.moves-container li{
+  background-color: #e6dfdf;
+  border: 2px solid white;
+}
+
+/* colores para borde*/
+/*Colores para caundo se busca el pokemon*/
+.normalD { border: 3px solid #867c31;box-shadow: 6px 6px 15px #867c31; }
+.fireD { border: 3px solid #e67205;box-shadow: 6px 6px 15px #e67205;}
+.waterD { border: 3px solid #75C2F6;box-shadow: 6px 6px 15px #75C2F6;}
+.bugD{ border: 3px solid #609966;box-shadow: 6px 6px 15px #609966;}
+.rockD{ border: 3px solid rgb(110, 109, 109);box-shadow: 6px 6px 15px rgb(110, 109, 109);}
+.ghostD{ border: 3px solid #752fbb;box-shadow: 6px 6px 15px #752fbb;}
+.electricD{ border: 3px solid #f3cb17;box-shadow: 6px 6px 15px #f3cb17;}
+.poisonD{ border: 3px solid #9b3284;box-shadow: 6px 6px 15px #9b3284;}
+.psychicD{ border: 3px solid rgb(123, 82, 8);box-shadow: 6px 6px 15px rgb(123, 82, 8);}
+.dragonD{ border: 3px solid #157aa8;box-shadow: 6px 6px 15px #157aa8;}
+.grassD{border: 3px solid #449761;box-shadow: 6px 6px 15px #449761;}
+.groundD{border: 3px solid #db9942; box-shadow: 6px 6px 15px #db9942;}
+
+@media (max-width: 500px){
+  .normalD { border: 2px solid #867c31;box-shadow: 4px 4px 10px #867c31; }
+  .fireD { border: 2px solid #e67205;box-shadow: 4px 4px 150x #e67205;}
+  .waterD { border: 2px solid #75C2F6;box-shadow: 4px 4px 10px #75C2F6;}
+  .bugD{ border: 2px solid #609966;box-shadow: 2px 2px 10px #609966;}
+  .rockD{ border: 2px solid rgb(110, 109, 109);box-shadow: 4px 4px 10px rgb(110, 109, 109);}
+  .ghostD{ border: 2px solid #752fbb;box-shadow: 4px 4px 10px #752fbb;}
+  .electricD{ border: 2px solid #f3cb17;box-shadow: 4px 4px 10px #f3cb17;}
+  .poisonD{ border: 2px solid #9b3284;box-shadow: 4px 4px 10px #9b3284;}
+  .psychicD{ border: 2px solid rgb(222, 189, 65);box-shadow: 4px 4px 10px rgb(222, 189, 65);}
+  .dragonD{ border: 2px solid #157aa8;box-shadow: 4px 4px 10px #157aa8;}
+  .grassD{border: 2px solid #449761;box-shadow: 4px 4px 10px #449761;}
+  .groundD{border: 2px solid #db9942; box-shadow: 4px 4px 10px #db9942;}
+}

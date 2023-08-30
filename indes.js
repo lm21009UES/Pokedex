@@ -60,6 +60,59 @@ const PokemonEstruc = (() => {
         const card = document.createElement('div');
         //le agregamos una clase pokemon-card que se encuentra con los estilos en el archivo style.css
         card.classList.add('pokemon-card');
+        //verificamos el tipo de pokemon y asignamos una clase para fondo
+        if(listaPokemon[i].types[0].type.name =="bug"){
+          //borde para pokemon tipo bug
+          card.classList.add("bugD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="dragon"){
+          //borde para pokemon tipo dragon
+          card.classList.add("dragonD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="electric"){
+          //fongo para pokemon tipo electric
+          card.classList.add("electricD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="fire"){
+          //fondo para pokemon tipo fire
+          card.classList.add("fireD");
+        }
+        else if(listaPokemon[i].types[0].type.name == "fighting"){
+          //fondo para pokemon tipo fighting
+          card.classList.add("fightingD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="grass"){
+          //fongo para pokemon tipo grass
+          card.classList.add("grassD");
+        }
+        else if(listaPokemon[i].types[0].type.name == "ground"){
+          //fondo para pokemon tipo ground
+          card.classList.add("groundD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="ghost"){
+          //fondo para pokemon tipo ghost
+          card.classList.add("ghostD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="normal"){
+          //fondo para pokemon tipo normal
+          card.classList.add("normalD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="poison"){
+          //fondo para pokemon tipo poison
+          card.classList.add("poisonD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="psychic"){
+          //fondo para pokemon tipo psychic
+          card.classList.add("psychicD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="rock"){
+          //fondo para pokemon tipo rock
+          card.classList.add("rockD");
+        }
+        else if(listaPokemon[i].types[0].type.name=="water"){
+          //fondo para pokemon tipo water
+          card.classList.add("waterD");
+        }
         card.id = listaPokemon[i].name.toLowerCase(); // Establece el ID igual al  nombre del Pokémon en minúsculas
         // Crear la imagen del Pokémon
         const pokemonImage = document.createElement('img');
@@ -166,7 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
             //fondo para pokemon tipo water
             card.classList.add("cardwater");
           }
-          //asignamos informacion que contendra la card en la pagina
+          //agregamos informacion de la api a la card
+          const movesList = tem.moves;
+          const movesHTML = movesList.map(move => `<li style="width: 100%"><i class="fa-solid fa-check"></i>${move.move.name}</li>`).join('');
           card.innerHTML = `
                   
           <div class="cardTHeader">
@@ -235,14 +290,11 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             </div>
             
-            <div class="d-none" id="campo">
+            <div class="d-none moves-container" id="campo">
               <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <ul>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[0].move.name}</li>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[1].move.name}</li>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[2].move.name}</li>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[3].move.name}</li>
+                  <ul id="movesList">
+                    ${movesHTML}
                   </ul>
                 </div>
               </div>
@@ -368,6 +420,8 @@ list.forEach(element => {//con un foreach recorremos toda la lista
             card.classList.add("cardwater");
           }
           //agregamos informacion de la api a la card
+          const movesList = tem.moves;
+          const movesHTML = movesList.map(move => `<li style="width: 100%"><i class="fa-solid fa-check"></i>${move.move.name}</li>`).join('');
           card.innerHTML = `
                   
           <div class="cardTHeader">
@@ -436,14 +490,11 @@ list.forEach(element => {//con un foreach recorremos toda la lista
               </div>
             </div>
             
-            <div class="d-none" id="campo">
+            <div class="d-none moves-container" id="campo">
               <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <ul>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[0].move.name}</li>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[1].move.name}</li>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[2].move.name}</li>
-                    <li style="width: 100%"><i class="fa-solid fa-check"></i>${tem.moves[3].move.name}</li>
+                  <ul id="movesList">
+                    ${movesHTML}
                   </ul>
                 </div>
               </div>
