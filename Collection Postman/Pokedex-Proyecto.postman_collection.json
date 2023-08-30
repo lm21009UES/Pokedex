@@ -1,0 +1,2888 @@
+{
+	"info": {
+		"_postman_id": "c82e4823-78bf-4433-af55-9969eac34510",
+		"name": "Pokedex-Proyecto",
+		"description": "<img src=\"https://content.pstmn.io/60f1db16-70c6-4d02-81af-308204b7156d/MjAyMy0wOC0yOCAxOV8yMl8xMS1Qb2tlZGV4IC0gQnJhdmUucG5n\" alt=\"\">",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29352354"
+	},
+	"item": [
+		{
+			"name": "{{callPokemon}}/pokemon/1/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/1/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/2/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/2/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/3/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/3/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/4/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/4/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/5/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/5/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/6/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/6/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"6",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/7/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/7/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/8/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/8/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"8",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/9/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/9/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"9",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/10/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/10/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/11/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/11/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"11",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/12/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/12/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"12",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/13/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/13/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"13",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/14/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/14/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"14",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/15/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/15/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"15",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/16/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/16/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"16",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/17/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/17/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"17",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/18/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/18/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"18",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/19/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/19/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"19",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/20/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/20/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"20",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/21/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/21/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"21",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/22/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/22/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"22",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/23/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/23/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"23",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/24/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/24/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"24",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/25/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/25/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"25",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/26/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/26/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"26",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/27/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/27/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"27",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/28/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/28/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"28",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/29/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/29/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"29",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/30/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/30/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"30",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/31/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/31/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"31",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/32/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/32/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"32",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/33/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/33/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"33",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/34/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/34/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"34",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/35/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/35/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"35",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/36/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/36/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"36",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/37/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/37/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"37",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/38/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/38/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"38",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/39/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/39/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"39",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/40/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/40/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"40",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/41/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/41/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"41",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/42/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/42/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"42",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/43/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/43/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"43",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/44/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/44/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"44",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/45/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/45/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"45",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/46/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/46/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"46",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/47/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/47/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"47",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/48/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/48/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"48",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/49/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/49/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"49",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/50/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/50/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"50",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/51/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/51/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"51",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/52/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/52/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"52",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/53/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/53/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"53",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/54/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/54/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"54",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/55/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/55/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"55",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/56/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/56/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"56",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/57/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/57/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"57",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/58/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/58/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"58",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/59/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/59/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"59",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/60/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/60/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"60",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/61/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/61/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"61",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/62/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/62/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"62",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/63/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/63/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"63",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/64/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/64/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"64",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/65/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/65/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"65",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/66/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/66/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"66",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/67/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/67/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"67",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/68/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/68/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"68",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/69/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/69/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"69",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/70/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/70/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"70",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/71/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/71/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"71",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/72/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/72/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"72",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/73/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/73/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"73",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/74/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/74/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"74",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/75/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/75/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"75",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/76/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/76/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"76",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/77/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/77/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"77",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/78/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/78/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"78",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/79/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/79/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"79",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/80/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/80/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"80",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/81/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/81/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"81",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/82/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/82/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"82",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/83/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/83/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"83",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/84/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/84/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"84",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/85/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/85/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"85",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/86/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/86/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"86",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/87/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/87/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"87",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/88/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/88/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"88",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/89/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/89/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"89",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/90/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/90/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"90",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/91/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/91/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"91",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/92/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/92/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"92",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/93/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/93/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"93",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/94/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/94/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"94",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/95/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/95/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"95",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/96/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/96/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"96",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/97/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/97/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"97",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/98/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/98/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"98",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/99/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/99/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"99",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/100/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/100/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"100",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/101/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/101/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"101",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/102/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/102/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"102",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/103/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/103/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"103",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/104/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/104/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"104",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/105/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/105/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"105",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/106/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/106/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"106",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/107/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/107/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"107",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/108/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/108/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"108",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/109/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/109/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"109",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/110/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/110/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"110",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/111/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/111/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"111",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/112/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/112/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"112",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/113/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/113/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"113",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/114/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/114/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"114",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/115/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/115/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"115",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/116/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/116/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"116",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/117/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/117/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"117",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/118/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/118/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"118",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/119/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/119/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"119",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/120/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/120/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"120",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/121/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/121/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"121",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/122/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/122/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"122",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/123/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/123/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"123",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/124/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/124/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"124",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/125/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/125/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"125",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/126/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/126/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"126",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/127/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/127/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"127",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/128/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/128/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"128",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/129/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/129/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"129",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/130/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/130/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"130",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/131/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/131/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"131",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/132/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/132/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"132",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/133/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/133/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"133",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/134/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/134/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"134",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/135/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/135/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"135",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/136/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/136/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"136",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/137/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/137/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"137",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/138/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/138/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"138",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/139/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/139/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"139",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/140/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/140/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"140",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/141/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/141/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"141",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/142/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/142/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"142",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/143/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/143/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"143",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/144/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/144/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"144",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/145/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/145/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"145",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/146/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/146/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"146",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/147/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/147/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"147",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/148/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/148/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"148",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/149/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/149/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"149",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{callPokemon}}/pokemon/150/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{callPokemon}}/pokemon/150/",
+					"host": [
+						"{{callPokemon}}"
+					],
+					"path": [
+						"pokemon",
+						"150",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "callPokemon",
+			"value": "https://pokeapi.co/api/v2",
+			"type": "string"
+		}
+	]
+}
