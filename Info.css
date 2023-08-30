@@ -34,6 +34,13 @@ body{
         background-image: url(./IMG/Pokedex_Info1.png);
         background-size: 50rem;
         background-position: center;
+        animation:anipokedex 0.5s ;
+    }
+
+     /*Peuqueña animacion*/
+     @keyframes anipokedex{
+        0%{transform:scaleX(.2)}
+        100%{transform:scaleX(1)}
     }
     
 /*Elementos del diseño de la pokedex*/
