@@ -412,7 +412,19 @@ ul{
 list-style: none;
 }
 
+#link{
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  font-size: 12px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(18, 78, 49);
+}
+
 @media (max-width: 500px){
+  #link{
+    font-size: 9px;
+    text-align: center;
+  }
   .cardT{
     box-sizing: border-box;
     width: 80%;
@@ -530,6 +542,8 @@ background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, F
 .dragonD{ border: 3px solid #157aa8;box-shadow: 6px 6px 15px #157aa8;}
 .grassD{border: 3px solid #449761;box-shadow: 6px 6px 15px #449761;}
 .groundD{border: 3px solid #db9942; box-shadow: 6px 6px 15px #db9942;}
+.fightingD{border: 3px solid #cadfe9; box-shadow: 6px 6px 15px #cadfe9;}
+.iceD{border: 3px solid #948aa8; box-shadow: 6px 6px 15px #948aa8;}
 
 @media (max-width: 500px){
   .normalD { border: 2px solid #867c31;box-shadow: 4px 4px 10px #867c31; }
@@ -544,4 +558,6 @@ background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, F
   .dragonD{ border: 2px solid #157aa8;box-shadow: 4px 4px 10px #157aa8;}
   .grassD{border: 2px solid #449761;box-shadow: 4px 4px 10px #449761;}
   .groundD{border: 2px solid #db9942; box-shadow: 4px 4px 10px #db9942;}
+  .fightingD{border: 2px solid #cadfe9; box-shadow: 4px 4px 10px #cadfe9;}
+  .iceD{border: 2px solid #948aa8; box-shadow: 4px 4px 10px #948aa8;}
 }

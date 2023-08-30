@@ -5,7 +5,6 @@ const apiURL = 'https://pokeapi.co/api/v2/pokemon?limit=150';
 const apiURLindividual = "https://pokeapi.co/api/v2/pokemon/"
 //lista para almacenar los pokemones
 let listaPokemon = [];
-
 //objeto principal que contendra metodos publicos y privados
 const PokemonEstruc = (() => {
   //reiniciamos la lista de pokemones, cada vez que llamemos la funcion para que contenga los pokemones
@@ -113,6 +112,10 @@ const PokemonEstruc = (() => {
           //fondo para pokemon tipo water
           card.classList.add("waterD");
         }
+        else if(listaPokemon[i].types[0].type.name=="ice"){
+          //fondo para pokemon tipo water
+          card.classList.add("iceD");
+        }
         card.id = listaPokemon[i].name.toLowerCase(); // Establece el ID igual al  nombre del Pokémon en minúsculas
         // Crear la imagen del Pokémon
         const pokemonImage = document.createElement('img');
@@ -125,10 +128,23 @@ const PokemonEstruc = (() => {
         // Crear el tipo del Pokémon
         const pokemonType = document.createElement('p');
         pokemonType.textContent = `${listaPokemon[i].types[0].type.name}`;
+        const info = document.createElement("div");
+        info.setAttribute("id","link");
+        info.innerHTML=`
+        <div>
+          <p>Height: ${(listaPokemon[i].height)*10} cm</p>
+        </div>
+        <div>
+          <p>Weight: ${(listaPokemon[i].weight)/100} kg</p>
+        </div>
+        <div>
+          <p>Abilities: ${(listaPokemon[i].abilities[0].ability.name)}</p>
+        </div>`
         // Agregar la imagen, el nombre y el tipo a la tarjeta
         card.appendChild(pokemonImage);
         card.appendChild(pokemonName);
         card.appendChild(pokemonType);
+        card.appendChild(info);
         //agregamos la card con tada la informacion al div que se encuntra en el index.html
         carPokemon.appendChild(card);
       }
@@ -257,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li style="width: 100%">Weight: ${(tem.weight)/100} kg</li>
                     <li style="width: 100%">Abilities: ${tem.abilities[0].ability.name}</li>
                     <li style="width: 100%">Base Experience: ${tem.base_experience}</li>
+                    <li style="width: 100%">ID : # ${tem.id} </li>
                   </ul>
                 </div>
               </div>
@@ -457,6 +474,7 @@ list.forEach(element => {//con un foreach recorremos toda la lista
                     <li style="width: 100%">Weight: ${(tem.weight)/100} kg</li>
                     <li style="width: 100%">Abilities: ${tem.abilities[0].ability.name}</li>
                     <li style="width: 100%">Base Experience: ${tem.base_experience}</li>
+                    <li style="width: 100%">ID : # ${tem.id} </li>
                   </ul>
                 </div>
               </div>
