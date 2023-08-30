@@ -556,6 +556,14 @@ background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, F
   background: -webkit-linear-gradient(to right, #e74c3c, #000000);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #e74c3c, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+.cardice{background: #1c92d2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
+.cardfairy{background: #f953c6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #b91d73, #f953c6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #b91d73, #f953c6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+}
 
 /* Estilo para el contenedor de movimientos */
 .moves-container {
@@ -586,6 +594,7 @@ background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, F
 .grassD{border: 3px solid #449761;box-shadow: 6px 6px 15px #449761;}
 .groundD{border: 3px solid #db9942; box-shadow: 6px 6px 15px #db9942;}
 .fightingD{border: 3px solid #cadfe9; box-shadow: 6px 6px 15px #cadfe9;}
+.fairyD{border: 3px solid #cf51c1; box-shadow: 6px 6px 15px #cf51c1;}
 .iceD{border: 3px solid #948aa8; box-shadow: 6px 6px 15px #948aa8;}
 
 @media (max-width: 500px){
@@ -602,5 +611,6 @@ background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, F
   .grassD{border: 2px solid #449761;box-shadow: 4px 4px 10px #449761;}
   .groundD{border: 2px solid #db9942; box-shadow: 4px 4px 10px #db9942;}
   .fightingD{border: 2px solid #cadfe9; box-shadow: 4px 4px 10px #cadfe9;}
+  .fairyD{border: 2px solid #cf51c1; box-shadow: 4px 4px 10px #cf51c1;}
   .iceD{border: 2px solid #948aa8; box-shadow: 4px 4px 10px #948aa8;}
 }

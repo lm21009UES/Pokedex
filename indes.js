@@ -116,6 +116,10 @@ const PokemonEstruc = (() => {
           //fondo para pokemon tipo water
           card.classList.add("iceD");
         }
+        else if(listaPokemon[i].types[0].type.name=="fairy"){
+          //fondo para pokemon tipo water
+          card.classList.add("fairyD");
+        }
         card.id = listaPokemon[i].name.toLowerCase(); // Establece el ID igual al  nombre del Pokémon en minúsculas
         // Crear la imagen del Pokémon
         const pokemonImage = document.createElement('img');
@@ -181,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
           //removemos todas las clases para fondo de las card, ya que cada card se mostrara con un color acorde al tipo de pokemon
-          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater");
+          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater", "cardfairy", "cardice");
           //verificamos el tipo de pokemon y asignamos una clase para fondo
           if(tem.types[0].type.name =="bug"){
             //fondo para pokemon tipo bug
@@ -234,6 +238,14 @@ document.addEventListener("DOMContentLoaded", () => {
           else if(tem.types[0].type.name=="water"){
             //fondo para pokemon tipo water
             card.classList.add("cardwater");
+          }
+          else if(tem.types[0].type.name=="ice"){
+            //fondo para pokemon tipo ice
+            card.classList.add("cardice");
+          }
+          else if(tem.types[0].type.name=="fairy"){
+            //fondo para pokemon tipo fairy
+            card.classList.add("cardfairy");
           }
           //agregamos informacion de la api a la card
           const movesList = tem.moves;
@@ -394,7 +406,7 @@ list.forEach(element => {//con un foreach recorremos toda la lista
             }
           });
           //removemos clases para fondo de tarjetas
-          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater");
+          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater", "cardfairy", "cardice");
           //verificamos el tipo de pokemon y asignamos un background acorde a la categoria
           if(tem.types[0].type.name =="bug"){
             
@@ -435,6 +447,14 @@ list.forEach(element => {//con un foreach recorremos toda la lista
           }
           else if(tem.types[0].type.name=="water"){
             card.classList.add("cardwater");
+          }
+          else if(tem.types[0].type.name=="ice"){
+            //fondo para pokemon tipo ice
+            card.classList.add("cardice");
+          }
+          else if(tem.types[0].type.name=="fairy"){
+            //fondo para pokemon tipo fairy
+            card.classList.add("cardfairy");
           }
           //agregamos informacion de la api a la card
           const movesList = tem.moves;
