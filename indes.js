@@ -1,165 +1,41 @@
+import informationCharge from "./js/InformationCharge.js";
+import DrawingPokemon from "./js/DrawingPokemon.js";
+import featureChartPokemon from "./js/featureChartPokemon.js";
+import elements from "./js/BaseObject.js";
 
 // URL base de la API para obtener los primeros 150 Pokémon
 const apiURL = 'https://pokeapi.co/api/v2/pokemon?limit=150';
 //URL base para pedir los pokemones de manera individual a la API
+
 const apiURLindividual = "https://pokeapi.co/api/v2/pokemon/"
+
 //lista para almacenar los pokemones
 let listaPokemon = [];
+
 //objeto principal que contendra metodos publicos y privados
 const PokemonEstruc = (() => {
-  //reiniciamos la lista de pokemones, cada vez que llamemos la funcion para que contenga los pokemones
-  listaPokemon = [];
-  //creamos un metodo privado para cargar la informacion de los pokemones
-  const _cargarPokemones = async () => {//realizamos un async await
+  const _LoadPokemones = async () => {
     try {
-      const promesas = [];//creamos una variable que nos almacene la informacion temporal de los pokemones
-      //utilizamos un for para realizar las 150 peticiones
-      for (let index = 1; index <= 150; index++) {
-        //teniendo la ulr de la api, solo agregamos el indice para asi pedir uno a uno los pokemones
-        const apiUrl = apiURLindividual + index;
-        //hacemos la peticion obteniendo la informacion del pokemon i
-        const promesa = fetch(apiUrl)
-          .then((response) => {
-            //si la peticion tine un error, entonces retornamos un mensaje de erorr
-            if (!response.ok) {
-              throw new Error('No se pudo obtener los datos desde la API');
-            }
-            //si la peticion corre con exito, retornamos una respuesta en formato json
-            return response.json();
-          })
-          //luego de haber obtenido la repuesta analizamos el objeto que se nos ha sido devuelto
-          .then((data) => {
-            //agregamos el objeto a nuestra lista que utilizaremos para manejar los pokemones
-            listaPokemon.push(data);
-          })//en caso de que ocurra un error, retornamos un mensaje
-          .catch((error) => {
-            console.error(error);
-          });
-        //manejamos los elementos temporales que nos retornan las promesas realizadas
-        promesas.push(promesa);
-      }
-
-      // Esperar a que todas las promesas se completen antes de continuar
-      await Promise.all(promesas);
+      const lista = await informationCharge(apiURLindividual);
+      listaPokemon = lista;
     } catch (error) {
-      console.error(error);
+      console.error('Hubo un error:', error);
     }
-  };//fin de metodo para pedir la informacion
+  };
 
   //creacion de metodo para dibujar los pokemones, inicialmente se pide un parametro que indicara el tipo de pokemones a dibujar
   const _dibujarPokemones = (option) =>{
-    //capturamos el div donde se agregaran las card de cada pokemon
-    const carPokemon = document.querySelector("#pokemonCards");
-    //una vez que se tenga la lista con toda la informacion de los pokemones, la recorremos con un for
-    for(let i = 0; i<listaPokemon.length; i++){
-      //analizamos el parametro que se ha pasado en la funcion, si este es ver todos, se mostraran todos los pokemones, de lo contrario
-      //se analizara si el tipo de pokemon i coincide con el parametro que estamos pasando a la funcion
-      if(option ==="Ver todos" || listaPokemon[i].types[0].type.name === option){
-        //si la verifiacion es verdadero, creamos un elemento div
-        const card = document.createElement('div');
-        //le agregamos una clase pokemon-card que se encuentra con los estilos en el archivo style.css
-        card.classList.add('pokemon-card');
-        //verificamos el tipo de pokemon y asignamos una clase para fondo
-        if(listaPokemon[i].types[0].type.name =="bug"){
-          //borde para pokemon tipo bug
-          card.classList.add("bugD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="dragon"){
-          //borde para pokemon tipo dragon
-          card.classList.add("dragonD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="electric"){
-          //fongo para pokemon tipo electric
-          card.classList.add("electricD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="fire"){
-          //fondo para pokemon tipo fire
-          card.classList.add("fireD");
-        }
-        else if(listaPokemon[i].types[0].type.name == "fighting"){
-          //fondo para pokemon tipo fighting
-          card.classList.add("fightingD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="grass"){
-          //fongo para pokemon tipo grass
-          card.classList.add("grassD");
-        }
-        else if(listaPokemon[i].types[0].type.name == "ground"){
-          //fondo para pokemon tipo ground
-          card.classList.add("groundD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="ghost"){
-          //fondo para pokemon tipo ghost
-          card.classList.add("ghostD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="normal"){
-          //fondo para pokemon tipo normal
-          card.classList.add("normalD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="poison"){
-          //fondo para pokemon tipo poison
-          card.classList.add("poisonD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="psychic"){
-          //fondo para pokemon tipo psychic
-          card.classList.add("psychicD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="rock"){
-          //fondo para pokemon tipo rock
-          card.classList.add("rockD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="water"){
-          //fondo para pokemon tipo water
-          card.classList.add("waterD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="ice"){
-          //fondo para pokemon tipo water
-          card.classList.add("iceD");
-        }
-        else if(listaPokemon[i].types[0].type.name=="fairy"){
-          //fondo para pokemon tipo water
-          card.classList.add("fairyD");
-        }
-        card.id = listaPokemon[i].name.toLowerCase(); // Establece el ID igual al  nombre del Pokémon en minúsculas
-        // Crear la imagen del Pokémon
-        const pokemonImage = document.createElement('img');
-        pokemonImage.src = listaPokemon[i].sprites.front_default;//agrega un sprite proporcionado por la API
-        pokemonImage.alt = listaPokemon[0].name;//se le asigna un alt para personas no vidente
-        pokemonImage.classList.add('pokemon-image');//agregamos una clase personalizada para las imagenes en las card
-        // Crear el nombre del Pokémon
-        const pokemonName = document.createElement('h2');
-        pokemonName.textContent = listaPokemon[i].name.toUpperCase();
-        // Crear el tipo del Pokémon
-        const pokemonType = document.createElement('p');
-        pokemonType.textContent = `${listaPokemon[i].types[0].type.name}`;
-        const info = document.createElement("div");
-        info.setAttribute("id","link");
-        info.innerHTML=`
-        <div>
-          <p>Height: ${(listaPokemon[i].height)*10} cm</p>
-        </div>
-        <div>
-          <p>Weight: ${(listaPokemon[i].weight)/100} kg</p>
-        </div>
-        <div>
-          <p>Abilities: ${(listaPokemon[i].abilities[0].ability.name)}</p>
-        </div>`
-        // Agregar la imagen, el nombre y el tipo a la tarjeta
-        card.appendChild(pokemonImage);
-        card.appendChild(pokemonName);
-        card.appendChild(pokemonType);
-        card.appendChild(info);
-        //agregamos la card con tada la informacion al div que se encuntra en el index.html
-        carPokemon.appendChild(card);
-      }
-    }
+    DrawingPokemon(listaPokemon, option)
   }
 
   //creacion del unico metodo publico accesible para ejecutar los metodos privados
-  const dibujarPokemon = async (options) => {//utilizamos una funcion async await, ya que el primer metodo para pedir datos es asincrono,
-    //que llevaria tiempo realizarla, de esta manera se asegura que los datos se carguen primeramente
-    await _cargarPokemones();//se cargan los datos en la lista
-    _dibujarPokemones(options);//se dibuja los pokemones de acuerdo al parametro que se ha especificado
+  const dibujarPokemon = async (options) => {
+    try {
+      await _LoadPokemones();
+      _dibujarPokemones(options);
+    } catch (error) {
+      console.error('Hubo un error:', error);
+    }
   };
 
   return {dibujarPokemon};//retornamos lo que realiza el metodo dibujarPokemon
@@ -184,190 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
               tem= element;//la variable temporal guardara esa informacion
             }
           });
-          //removemos todas las clases para fondo de las card, ya que cada card se mostrara con un color acorde al tipo de pokemon
-          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater", "cardfairy", "cardice");
-          //verificamos el tipo de pokemon y asignamos una clase para fondo
-          if(tem.types[0].type.name =="bug"){
-            //fondo para pokemon tipo bug
-            card.classList.add("cardbug");
-          }
-          else if(tem.types[0].type.name=="dragon"){
-            //fongo para pokemon tipo dragon
-            card.classList.add("carddragon");
-          }
-          else if(tem.types[0].type.name=="electric"){
-            //fongo para pokemon tipo electric
-            card.classList.add("cardelectric");
-          }
-          else if(tem.types[0].type.name=="fire"){
-            //fondo para pokemon tipo fire
-            card.classList.add("cardfire");
-          }
-          else if(tem.types[0].type.name == "fighting"){
-            //fondo para pokemon tipo fighting
-            card.classList.add("cardfighting");
-          }
-          else if(tem.types[0].type.name=="grass"){
-            //fongo para pokemon tipo grass
-            card.classList.add("cardgrass");
-          }
-          else if(tem.types[0].type.name == "ground"){
-            //fondo para pokemon tipo ground
-            card.classList.add("cardground");
-          }
-          else if(tem.types[0].type.name=="ghost"){
-            //fondo para pokemon tipo ghost
-            card.classList.add("cardghost");
-          }
-          else if(tem.types[0].type.name=="normal"){
-            //fondo para pokemon tipo normal
-            card.classList.add("cardnormal");
-          }
-          else if(tem.types[0].type.name=="poison"){
-             //fondo para pokemon tipo poison
-            card.classList.add("cardpoison");
-          }
-          else if(tem.types[0].type.name=="psychic"){
-            //fondo para pokemon tipo psychic
-            card.classList.add("cardpsychic");
-          }
-          else if(tem.types[0].type.name=="rock"){
-            //fondo para pokemon tipo rock
-            card.classList.add("cardrock");
-          }
-          else if(tem.types[0].type.name=="water"){
-            //fondo para pokemon tipo water
-            card.classList.add("cardwater");
-          }
-          else if(tem.types[0].type.name=="ice"){
-            //fondo para pokemon tipo ice
-            card.classList.add("cardice");
-          }
-          else if(tem.types[0].type.name=="fairy"){
-            //fondo para pokemon tipo fairy
-            card.classList.add("cardfairy");
-          }
-          //agregamos informacion de la api a la card
-          const movesList = tem.moves;
-          const movesHTML = movesList.map(move => `<li style="width: 100%"><i class="fa-solid fa-check"></i>${move.move.name}</li>`).join('');
-          card.innerHTML = `
-                  
-          <div class="cardTHeader">
-            <i id="salir"><img src="./IMG/boton.png"></i>
-          </div>
-          <div class="cardTImg">
-            <img src="${tem.sprites.versions['generation-v']['black-white'].animated.front_default}" alt="${tem.name}" id="imgpokemon" style="width: 30%; height: auto;">
-          </div>
-          <div class="cardTNav">
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link active">About</a>
-              </li>
-            </ul>
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link">Base Stats</a>
-              </li>
-            </ul>
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link">moves</a>
-              </li>
-            </ul>
-          </div>
-          <div class="cardTBody">
-            <div id="campo">
-              <div class="row">
-                <div class="col">
-                  <ul>
-                    <li style="width: 100%">Especies: ${tem.name.toUpperCase()}</li>
-                    <li style="width: 100%">Height: ${(tem.height)*10} cm</li>
-                    <li style="width: 100%">Weight: ${(tem.weight)/100} kg</li>
-                    <li style="width: 100%">Abilities: ${tem.abilities[0].ability.name}</li>
-                    <li style="width: 100%">Base Experience: ${tem.base_experience}</li>
-                    <li style="width: 100%">ID : # ${tem.id} </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="d-none" id="campo">
-              <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <ul>
-                    <li style="width: 100%">HP: ${tem.stats[0].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Attack: ${tem.stats[1].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Defence: ${tem.stats[2].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Sp. Atk: ${tem.stats[3].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Sp. Def: ${tem.stats[4].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Speed: ${tem.stats[5].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="150"></progress></li>
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <h5>Type</h5>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <h4>${tem.types[0].type.name}</h4>
-                </div>
-              </div>
-            </div>
-            
-            <div class="d-none moves-container" id="campo">
-              <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <ul id="movesList">
-                    ${movesHTML}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>`;
-          //cargada la informacion, la card contiene tres elementos en el nav, lo capturamos
-          const generalidad = document.querySelectorAll(".nav-link");
-          //secciones que muestran la informacion de acuerdo a la eleccion del nav
-          const campos = document.querySelectorAll("#campo");
-          //recorremos el arreglo que nos retorna la captura de los elementos del nav,
-          generalidad.forEach((element, indice) => {//pasamos como parametro el elemento y el indice del mismo
-            element.addEventListener("click", () =>{//agregamos un evento a cada uno
-              generalidad.forEach(element => {//eliminamos la clase que pueden contener los elementos del nav
-                  element.classList.remove("active")
-              });
-              //el elemento clickeado le asignamos clase active para dar enfasis
-              element.classList.add("active");
-              //recorremos el arreglo de los campos, y el indice que capturamos anteriormente servira para saver que campos mostrar
-              for (let index = 0; index < campos.length; index++) {
-                if(indice===index){//comparamos el indice con la variable index
-                  campos[index].classList.remove("d-none");//si son iguales removemos la clase que mantiene oculta la informacion
-                }
-                else{
-                  campos[index].classList.add("d-none");//los elmentos diferentes al indice seran ocultos
-                }
-              }
-            })
-          });
-          // Muestra la tarjeta con una transición de opacidad
-          card.style.display = "block";
-          setTimeout(function() {
-            card.style.opacity = "1"; // Hace que la tarjeta sea visible
-          }, 10); // Se necesita un pequeño retraso para que la transición funcione correctamente
-          const salir = document.querySelector("#salir");
-          salir.addEventListener("click", () =>{
-          var card = document.querySelector(".cardT");
-        
-          // Oculta la tarjeta con una transición de opacidad
-          card.style.opacity = "0"; // Hace que la tarjeta sea invisible
-          setTimeout(function() {
-            card.style.display = "none";
-          }, 500); // Espera a que termine la transición y luego oculta la tarjeta
-          
-        })
+          var objeto = elements(tem);
+          featureChartPokemon(card, objeto);
         });
       });
     })
@@ -405,175 +99,7 @@ list.forEach(element => {//con un foreach recorremos toda la lista
               tem= element;
             }
           });
-          //removemos clases para fondo de tarjetas
-          card.classList.remove("cardbug","carddragon","cardelectric","cardfire","cardfighting","cardgrass","cardground","cardghost","cardnormal","cardpoison","cardpsychic","cardrock","cardwater", "cardfairy", "cardice");
-          //verificamos el tipo de pokemon y asignamos un background acorde a la categoria
-          if(tem.types[0].type.name =="bug"){
-            
-            card.classList.add("cardbug");
-          }
-          else if(tem.types[0].type.name=="dragon"){
-            card.classList.add("carddragon");
-          }
-          else if(tem.types[0].type.name=="electric"){
-            card.classList.add("cardelectric");
-          }
-          else if(tem.types[0].type.name=="fire"){
-            card.classList.add("cardfire");
-          }
-          else if(tem.types[0].type.name == "fighting"){
-            card.classList.add("cardfighting");
-          }
-          else if(tem.types[0].type.name=="grass"){
-            card.classList.add("cardgrass");
-          }
-          else if(tem.types[0].type.name == "ground"){
-            card.classList.add("cardground");
-          }
-          else if(tem.types[0].type.name=="ghost"){
-            card.classList.add("cardghost");
-          }
-          else if(tem.types[0].type.name=="normal"){
-            card.classList.add("cardnormal");
-          }
-          else if(tem.types[0].type.name=="poison"){
-            card.classList.add("cardpoison");
-          }
-          else if(tem.types[0].type.name=="psychic"){
-            card.classList.add("cardpsychic");
-          }
-          else if(tem.types[0].type.name=="rock"){
-            card.classList.add("cardrock");
-          }
-          else if(tem.types[0].type.name=="water"){
-            card.classList.add("cardwater");
-          }
-          else if(tem.types[0].type.name=="ice"){
-            //fondo para pokemon tipo ice
-            card.classList.add("cardice");
-          }
-          else if(tem.types[0].type.name=="fairy"){
-            //fondo para pokemon tipo fairy
-            card.classList.add("cardfairy");
-          }
-          //agregamos informacion de la api a la card
-          const movesList = tem.moves;
-          const movesHTML = movesList.map(move => `<li style="width: 100%"><i class="fa-solid fa-check"></i>${move.move.name}</li>`).join('');
-          card.innerHTML = `
-                  
-          <div class="cardTHeader">
-            <i id="salir"><img src="./IMG/boton.png"></i>
-          </div>
-          <div class="cardTImg">
-            <img src="${tem.sprites.versions['generation-v']['black-white'].animated.front_default}" alt="${tem.name}" id="imgpokemon" style="width: 30%; height: auto;">
-          </div>
-          <div class="cardTNav">
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link active">About</a>
-              </li>
-            </ul>
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link">Base Stats</a>
-              </li>
-            </ul>
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link">moves</a>
-              </li>
-            </ul>
-          </div>
-          <div class="cardTBody">
-            <div id="campo">
-              <div class="row">
-                <div class="col">
-                  <ul>
-                    <li style="width: 100%">Especies: ${tem.name.toUpperCase()}</li>
-                    <li style="width: 100%">Height: ${(tem.height)*10} cm</li>
-                    <li style="width: 100%">Weight: ${(tem.weight)/100} kg</li>
-                    <li style="width: 100%">Abilities: ${tem.abilities[0].ability.name}</li>
-                    <li style="width: 100%">Base Experience: ${tem.base_experience}</li>
-                    <li style="width: 100%">ID : # ${tem.id} </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="d-none" id="campo">
-              <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <ul>
-                    <li style="width: 100%">HP: ${tem.stats[0].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[0].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Attack: ${tem.stats[1].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[1].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Defence: ${tem.stats[2].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[2].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Sp. Atk: ${tem.stats[3].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[3].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Sp. Def: ${tem.stats[4].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[4].base_stat}" max="150"></progress></li>
-                    <li style="width: 100%">Speed: ${tem.stats[5].base_stat}</li>
-                    <li style="width: 100%"><progress value="${tem.stats[5].base_stat}" max="150"></progress></li>
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <h5>Type</h5>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <h4>${tem.types[0].type.name}</h4>
-                </div>
-              </div>
-            </div>
-            
-            <div class="d-none moves-container" id="campo">
-              <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <ul id="movesList">
-                    ${movesHTML}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>`;
-          //opciones del navbar de la tarjeta de caracteristicas
-          const generalidad = document.querySelectorAll(".nav-link");
-          //partes donde se encuntra almacenada las caracteristicas
-          const campos = document.querySelectorAll("#campo");
-          generalidad.forEach((element, indice) => {//recorremos el arreglo de elementos del nav y capturamos el indice
-            element.addEventListener("click", () =>{
-              generalidad.forEach(element => {//removemos el estado activo de algun elemento del nav
-                  element.classList.remove("active")
-              });
-              //el elemento que ha sido clickeado se resalta para mostrar el click
-              element.classList.add("active");
-              for (let index = 0; index < campos.length; index++) {//mostramos la seccion acorde al indice que se ha capturado
-                if(indice===index){
-                  campos[index].classList.remove("d-none");//mostramos informacion
-                }
-                else{
-                  campos[index].classList.add("d-none");//se oculta campos que no tengan el mismo indice
-                }
-              }
-            })
-          });
-          // Muestra la tarjeta con una transición de opacidad
-          card.style.display = "block";
-          setTimeout(function() {
-            card.style.opacity = "1"; // Hace que la tarjeta sea visible
-          }, 10); // Se necesita un pequeño retraso para que la transición funcione correctamente
-          const salir = document.querySelector("#salir");
-          salir.addEventListener("click", () =>{
-          var card = document.querySelector(".cardT");
-        
-          // Oculta la tarjeta con una transición de opacidad
-          card.style.opacity = "0"; // Hace que la tarjeta sea invisible
-          setTimeout(function() {
-            card.style.display = "none";
-          }, 500); // Espera a que termine la transición y luego oculta la tarjeta
-        })
+          featureChartPokemon(card, tem);
         });
       });
     })
@@ -622,4 +148,3 @@ searchForm.addEventListener('submit', function (e) {
     window.alert("No se encuentra el Pokemon");
   }
 });
-
