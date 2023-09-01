@@ -99,7 +99,8 @@ list.forEach(element => {//con un foreach recorremos toda la lista
               tem= element;
             }
           });
-          featureChartPokemon(card, tem);
+          var objeto = elements(tem);
+          featureChartPokemon(card, objeto);
         });
       });
     })
